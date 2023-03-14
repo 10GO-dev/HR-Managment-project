@@ -66,7 +66,7 @@
             // pb_imgName
             // 
             pb_imgName.Image = Properties.Resources.Img_Name2;
-            pb_imgName.Location = new Point(12, 9);
+            pb_imgName.Location = new Point(29, 9);
             pb_imgName.Name = "pb_imgName";
             pb_imgName.Size = new Size(120, 50);
             pb_imgName.SizeMode = PictureBoxSizeMode.StretchImage;
