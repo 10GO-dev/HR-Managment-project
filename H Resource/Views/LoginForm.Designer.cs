@@ -51,7 +51,6 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(237, 230, 219);
-            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(pb_login_Image);
             panel1.Controls.Add(pb_btnClose);
             panel1.Controls.Add(pn_drag);
@@ -198,6 +197,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
             Load += LoginForm_Load;
+            Paint += LoginForm_Paint;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pb_login_Image).EndInit();

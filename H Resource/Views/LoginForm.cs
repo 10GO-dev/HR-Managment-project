@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -28,18 +29,9 @@ namespace H_Resource.Views
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            int radius = 20;
-            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddArc(0, 0, radius, radius, 180, 90);
-            path.AddLine(radius, 0, this.Width - radius, 0);
-            path.AddArc(this.Width - radius, 0, radius, radius, 270, 90);
-            path.AddLine(this.Width, radius, this.Width, this.Height - radius);
-            path.AddArc(this.Width - radius, this.Height - radius, radius, radius, 0, 90);
-            path.AddLine(this.Width - radius, this.Height, radius, this.Height);
-            path.AddArc(0, this.Height - radius, radius, radius, 90, 90);
-            path.AddLine(0, this.Height - radius, 0, radius);
-            this.Region = new Region(path);
+            
         }
+
 
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -110,6 +102,37 @@ namespace H_Resource.Views
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void LoginForm_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            int radius = 20;
+            int diameter = radius * 2;
+            Rectangle rect = new Rectangle(0, 0, diameter, diameter);
+            // Esquina superior izquierda
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(rect, 180, 90);
+            path.AddLine(radius, 0, this.Width - radius, 0);
+
+            // Esquina superior derecha
+            rect.X = this.Width - diameter;
+            path.AddArc(rect, 270, 90);
+            path.AddLine(this.Width, radius, this.Width, this.Height - radius);
+
+            // Esquina inferior derecha
+            rect.Y = this.Height - diameter;
+            path.AddArc(rect, 0, 90);
+            path.AddLine(this.Width - radius, this.Height, radius, this.Height);
+
+            // Esquina inferior izquierda
+            rect.X = 0;
+            path.AddArc(rect, 90, 90);
+            path.AddLine(0, this.Height - radius, 0, radius);
+
+            path.CloseFigure();
+            this.Region = new Region(path);
         }
     }
 }
