@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,8 +17,15 @@ namespace H_Resource.Views
         {
             InitializeComponent();
         }
-
-
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+            using (var brush = new SolidBrush(BackColor))
+            {
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
+        }
         private void LoginForm_Load(object sender, EventArgs e)
         {
             int radius = 20;
@@ -33,12 +41,18 @@ namespace H_Resource.Views
             this.Region = new Region(path);
         }
 
-        private void LoginForm_Paint(object sender, PaintEventArgs e)
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr intPtr, int msg, int wParam, int lParam);
+        protected override CreateParams CreateParams
         {
-            using (var brush = new SolidBrush(BackColor))
+            get
             {
-                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+                CreateParams cp = base.CreateParams;
+                cp.Style = 0x20000; // Minimize borderless form from taskbar
+                return cp;
             }
         }
 
@@ -72,6 +86,30 @@ namespace H_Resource.Views
         private void pb_btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pb_btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            pb_btnClose.Location = new Point(886, 17);
+            pb_btnClose.Size = new Size(39, 39);
+        }
+
+        private void pb_btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            pb_btnClose.Location = new Point(889, 20);
+            pb_btnClose.Size = new Size(33, 33);
+        }
+
+        private void LoginForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pn_drag_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
