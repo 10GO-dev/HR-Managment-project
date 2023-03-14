@@ -102,3 +102,21 @@ D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debu
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.pdb
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.genruntimeconfig.cache
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\ref\H Resource.dll
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.csproj.AssemblyReference.cache
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Properties.Resources.resources
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.LoginForm.resources
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.csproj.GenerateResource.cache
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.AssemblyInfoInputs.cache
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.AssemblyInfo.cs
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.csproj.CoreCompileInputs.cache
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.dll
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\refint\H Resource.dll
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.pdb
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.exe
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.deps.json
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.runtimeconfig.json
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.dll
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.pdb
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.genruntimeconfig.cache
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\ref\H Resource.dll
