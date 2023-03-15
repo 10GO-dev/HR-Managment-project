@@ -118,64 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Img_Background_btn_PayrollHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_PayrollHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Background_btn_vacationHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_vacationHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Background_btn_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon_Back_Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon_Back_Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon_Close_Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Icon_Close_Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_HomeLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Img_HomeLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Img_Background_btn_Payroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_Payroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Background_btn_Login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Name1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Name.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon_Close_Btn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon_Close_Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Background_txt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_txt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Img_Background_txt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Img_Background_txt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Img_Background_btn_employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_HomeLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_HomeLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Name" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Name.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Img_Background_btn_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Background_btn_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_Background_btn_LoginHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Img_Background_btn_LoginHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Background_btn_LoginHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_LoginHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Background_btn_employeeHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_employeeHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Background_btn_vacation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_vacation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon_Close_Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon_Close_Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Name2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Name.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

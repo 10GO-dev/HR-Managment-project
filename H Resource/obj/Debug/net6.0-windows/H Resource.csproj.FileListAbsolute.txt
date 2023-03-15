@@ -120,22 +120,3 @@ D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.pdb
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.genruntimeconfig.cache
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\ref\H Resource.dll
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.exe
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.deps.json
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.runtimeconfig.json
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.dll
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.pdb
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.csproj.AssemblyReference.cache
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Properties.Resources.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.LoginForm.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.csproj.GenerateResource.cache
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.GeneratedMSBuildEditorConfig.editorconfig
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.AssemblyInfoInputs.cache
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.AssemblyInfo.cs
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.csproj.CoreCompileInputs.cache
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.dll
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\refint\H Resource.dll
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.pdb
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.genruntimeconfig.cache
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\ref\H Resource.dll
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.HomeScreenForm.resources
