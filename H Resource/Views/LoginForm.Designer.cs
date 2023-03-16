@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             panel1 = new Panel();
             pb_login_Image = new PictureBox();
             pb_btnClose = new PictureBox();
@@ -40,6 +41,7 @@
             textBox1 = new TextBox();
             label2 = new Label();
             pictureBox2 = new PictureBox();
+            lbl_login_infoError = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_login_Image).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_btnClose).BeginInit();
@@ -51,6 +53,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(237, 230, 219);
+            panel1.Controls.Add(lbl_login_infoError);
             panel1.Controls.Add(pb_login_Image);
             panel1.Controls.Add(pb_btnClose);
             panel1.Controls.Add(pn_drag);
@@ -186,6 +189,17 @@
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
+            // lbl_login_infoError
+            // 
+            lbl_login_infoError.AutoSize = true;
+            lbl_login_infoError.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_login_infoError.ForeColor = Color.Red;
+            lbl_login_infoError.Location = new Point(605, 311);
+            lbl_login_infoError.Name = "lbl_login_infoError";
+            lbl_login_infoError.Size = new Size(0, 16);
+            lbl_login_infoError.TabIndex = 13;
+            lbl_login_infoError.Click += label3_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -193,6 +207,7 @@
             ClientSize = new Size(945, 489);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
@@ -222,5 +237,6 @@
         private PictureBox pb_btnClose;
         private TextBox textBox3;
         private Panel pn_drag;
+        private Label lbl_login_infoError;
     }
 }

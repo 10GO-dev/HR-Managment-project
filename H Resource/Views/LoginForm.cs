@@ -29,7 +29,7 @@ namespace H_Resource.Views
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -133,6 +133,11 @@ namespace H_Resource.Views
 
             path.CloseFigure();
             this.Region = new Region(path);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

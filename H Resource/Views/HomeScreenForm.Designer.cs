@@ -40,6 +40,7 @@
             pn_btnEmployee = new Panel();
             pb_btnEmployee = new PictureBox();
             pn_base = new Panel();
+            pn_control = new Panel();
             pn_drag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_imgName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_btnClose).BeginInit();
@@ -61,6 +62,8 @@
             pn_drag.Name = "pn_drag";
             pn_drag.Size = new Size(945, 59);
             pn_drag.TabIndex = 0;
+            pn_drag.Click += pn_drag_Click;
+            pn_drag.Paint += pn_drag_Paint;
             pn_drag.MouseDown += pn_drag_MouseDown;
             // 
             // pb_imgName
@@ -142,6 +145,7 @@
             lbl_about.Size = new Size(120, 20);
             lbl_about.TabIndex = 5;
             lbl_about.Text = ". Acerca de nosotros";
+            lbl_about.Click += lbl_about_Click;
             // 
             // pn_btnEmployee
             // 
@@ -169,6 +173,7 @@
             // pn_base
             // 
             pn_base.BackColor = Color.FromArgb(26, 60, 64);
+            pn_base.Controls.Add(pn_control);
             pn_base.Controls.Add(pn_btnEmployee);
             pn_base.Controls.Add(lbl_about);
             pn_base.Controls.Add(pn_btnVacation);
@@ -179,7 +184,16 @@
             pn_base.Name = "pn_base";
             pn_base.Size = new Size(945, 489);
             pn_base.TabIndex = 0;
+            pn_base.Click += pn_base_Click;
             pn_base.Paint += pn_base_Paint;
+            // 
+            // pn_control
+            // 
+            pn_control.BackColor = Color.Transparent;
+            pn_control.Location = new Point(12, 405);
+            pn_control.Name = "pn_control";
+            pn_control.Size = new Size(772, 81);
+            pn_control.TabIndex = 7;
             // 
             // HomeScreenForm
             // 
@@ -221,5 +235,6 @@
         private Panel pn_btnEmployee;
         private PictureBox pb_btnEmployee;
         private Panel pn_base;
+        private Panel pn_control;
     }
 }
