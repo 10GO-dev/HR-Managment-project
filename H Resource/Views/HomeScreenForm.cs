@@ -134,6 +134,8 @@ namespace H_Resource.Views
 
         private void pn_base_Paint(object sender, PaintEventArgs e)
         {
+
+
         }
 
         private void pb_btnPayroll_MouseEnter(object sender, EventArgs e)
@@ -158,6 +160,27 @@ namespace H_Resource.Views
         {
             pb_btnVacation.Image = Properties.Resources.Img_Background_btn_vacationHover;
             pb_btnVacation.Update();
+        }
+
+        private void lbl_about_Click(object sender, EventArgs e)
+        {
+            UserControl about = new AboutControl();
+            pn_control.Controls.Add(about);
+        }
+
+        private void pn_drag_Paint(object sender, PaintEventArgs e)
+        {
+            pn_control.Controls.Clear();
+        }
+
+        private void pn_base_Click(object sender, EventArgs e)
+        {
+            pn_control.Controls.Clear();
+        }
+
+        private void pn_drag_Click(object sender, EventArgs e)
+        {
+            pn_control.Controls.Clear();
         }
     }
 }
