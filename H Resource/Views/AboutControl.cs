@@ -46,7 +46,7 @@ namespace H_Resource.Views
 
         private void pb_img_chanel_aboutControl_Click(object sender, EventArgs e)
         {
-            Process.Start(chrome, "https://github.com/StevenP-2019-8372");
+            Process.Start(chrome, "https://github.com/Chanelp");
         }
 
         private void pb_img_diego_aboutControl_Click_1(object sender, EventArgs e)
