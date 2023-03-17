@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             panel1 = new Panel();
+            lbl_login_infoError = new Label();
             pb_login_Image = new PictureBox();
             pb_btnClose = new PictureBox();
             pn_drag = new Panel();
@@ -41,7 +42,6 @@
             textBox1 = new TextBox();
             label2 = new Label();
             pictureBox2 = new PictureBox();
-            lbl_login_infoError = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_login_Image).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_btnClose).BeginInit();
@@ -70,6 +70,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(945, 489);
             panel1.TabIndex = 0;
+            // 
+            // lbl_login_infoError
+            // 
+            lbl_login_infoError.AutoSize = true;
+            lbl_login_infoError.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_login_infoError.ForeColor = Color.Red;
+            lbl_login_infoError.Location = new Point(543, 310);
+            lbl_login_infoError.Name = "lbl_login_infoError";
+            lbl_login_infoError.Size = new Size(0, 16);
+            lbl_login_infoError.TabIndex = 13;
+            lbl_login_infoError.Click += label3_Click;
             // 
             // pb_login_Image
             // 
@@ -188,17 +199,6 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
-            // 
-            // lbl_login_infoError
-            // 
-            lbl_login_infoError.AutoSize = true;
-            lbl_login_infoError.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_login_infoError.ForeColor = Color.Red;
-            lbl_login_infoError.Location = new Point(605, 311);
-            lbl_login_infoError.Name = "lbl_login_infoError";
-            lbl_login_infoError.Size = new Size(0, 16);
-            lbl_login_infoError.TabIndex = 13;
-            lbl_login_infoError.Click += label3_Click;
             // 
             // LoginForm
             // 
