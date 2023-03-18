@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Update.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace H_Resource.Views
 {
     public partial class HomeScreenForm : Form
     {
-        public HomeScreenForm()
+        private static HomeScreenForm instance;
+        private HomeScreenForm()
         {
             InitializeComponent();
         }
+
+        public static HomeScreenForm getIntance()
+        {
+            if (instance == null)
+            {
+                instance = new HomeScreenForm();
+            }
+            return instance;
+        }
+
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -80,6 +93,7 @@ namespace H_Resource.Views
 
         private void pb_btnClose_MouseEnter(object sender, EventArgs e)
         {
+            hideAboutPage();
             pb_btnClose.Location = new Point(891, 9);
             pb_btnClose.Size = new Size(39, 39);
         }
@@ -96,29 +110,6 @@ namespace H_Resource.Views
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void pb_btnEmployee_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pn_btnEmployee_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void pn_btnEmployee_MouseEnter(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void pn_btnEmployee_MouseLeave(object sender, EventArgs e)
-        {
-
-
-
-        }
-
         private void pb_btnEmployee_MouseEnter(object sender, EventArgs e)
         {
             pb_btnEmployee.Image = Properties.Resources.Img_Background_btn_employeeHover;
@@ -129,13 +120,6 @@ namespace H_Resource.Views
         {
             pb_btnEmployee.Image = Properties.Resources.Img_Background_btn_employee;
             pb_btnEmployee.Update();
-        }
-
-
-        private void pn_base_Paint(object sender, PaintEventArgs e)
-        {
-
-
         }
 
         private void pb_btnPayroll_MouseEnter(object sender, EventArgs e)
@@ -164,23 +148,47 @@ namespace H_Resource.Views
 
         private void lbl_about_Click(object sender, EventArgs e)
         {
-            UserControl about = new AboutControl();
-            pn_control.Controls.Add(about);
+            aboutPage.Visible = aboutPage.Visible ? false : true;
         }
 
-        private void pn_drag_Paint(object sender, PaintEventArgs e)
+        private void pb_btnPayroll_Click(object sender, EventArgs e)
         {
-            pn_control.Controls.Clear();
+            hideAboutPage();
+            PayrollForm payrollForm = new PayrollForm();
+            this.Hide();
+            payrollForm.Show();
         }
 
-        private void pn_base_Click(object sender, EventArgs e)
+        private void pb_btnVacation_Click(object sender, EventArgs e)
         {
-            pn_control.Controls.Clear();
+            hideAboutPage();
+            VacationForm vacationForm = new VacationForm();
+            this.Hide();
+            vacationForm.Show();
         }
 
-        private void pn_drag_Click(object sender, EventArgs e)
+        private void pb_btnEmployee_Click(object sender, EventArgs e)
         {
-            pn_control.Controls.Clear();
+            hideAboutPage();
+            EmployeesForm employeesForm = new EmployeesForm();
+            this.Hide();
+            employeesForm.Show();
+
+        }
+
+        private void hideAboutPage()
+        {
+            aboutPage.Hide();
+        }
+
+        private void pn_base_Enter(object sender, EventArgs e)
+        {
+            hideAboutPage();
+        }
+
+        private void pn_base_MouseClick(object sender, MouseEventArgs e)
+        {
+            hideAboutPage();
         }
     }
 }

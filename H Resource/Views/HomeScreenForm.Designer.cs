@@ -40,7 +40,7 @@
             pn_btnEmployee = new Panel();
             pb_btnEmployee = new PictureBox();
             pn_base = new Panel();
-            pn_control = new Panel();
+            aboutPage = new AboutControl();
             pn_drag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_imgName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_btnClose).BeginInit();
@@ -62,19 +62,18 @@
             pn_drag.Name = "pn_drag";
             pn_drag.Size = new Size(945, 59);
             pn_drag.TabIndex = 0;
-            pn_drag.Click += pn_drag_Click;
-            pn_drag.Paint += pn_drag_Paint;
             pn_drag.MouseDown += pn_drag_MouseDown;
             // 
             // pb_imgName
             // 
-            pb_imgName.Image = Properties.Resources.Img_Name2;
-            pb_imgName.Location = new Point(29, 9);
+            pb_imgName.Image = Properties.Resources.Img_logoName;
+            pb_imgName.Location = new Point(12, 6);
             pb_imgName.Name = "pb_imgName";
-            pb_imgName.Size = new Size(120, 50);
+            pb_imgName.Size = new Size(172, 50);
             pb_imgName.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_imgName.TabIndex = 1;
             pb_imgName.TabStop = false;
+            pb_imgName.MouseDown += pn_drag_MouseDown;
             // 
             // pb_btnClose
             // 
@@ -109,6 +108,7 @@
             pb_btnPayroll.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_btnPayroll.TabIndex = 0;
             pb_btnPayroll.TabStop = false;
+            pb_btnPayroll.Click += pb_btnPayroll_Click;
             pb_btnPayroll.MouseEnter += pb_btnPayroll_MouseEnter;
             pb_btnPayroll.MouseLeave += pb_btnPayroll_MouseLeave;
             // 
@@ -131,6 +131,7 @@
             pb_btnVacation.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_btnVacation.TabIndex = 0;
             pb_btnVacation.TabStop = false;
+            pb_btnVacation.Click += pb_btnVacation_Click;
             pb_btnVacation.MouseEnter += pb_btnVacation_MouseEnter;
             pb_btnVacation.MouseLeave += pb_btnVacation_MouseLeave;
             // 
@@ -173,7 +174,7 @@
             // pn_base
             // 
             pn_base.BackColor = Color.FromArgb(26, 60, 64);
-            pn_base.Controls.Add(pn_control);
+            pn_base.Controls.Add(aboutPage);
             pn_base.Controls.Add(pn_btnEmployee);
             pn_base.Controls.Add(lbl_about);
             pn_base.Controls.Add(pn_btnVacation);
@@ -181,19 +182,20 @@
             pn_base.Controls.Add(pn_drag);
             pn_base.Dock = DockStyle.Fill;
             pn_base.Location = new Point(0, 0);
+            pn_base.MinimumSize = new Size(945, 489);
             pn_base.Name = "pn_base";
             pn_base.Size = new Size(945, 489);
             pn_base.TabIndex = 0;
-            pn_base.Click += pn_base_Click;
-            pn_base.Paint += pn_base_Paint;
+            pn_base.MouseClick += pn_base_MouseClick;
             // 
-            // pn_control
+            // aboutPage
             // 
-            pn_control.BackColor = Color.Transparent;
-            pn_control.Location = new Point(12, 405);
-            pn_control.Name = "pn_control";
-            pn_control.Size = new Size(772, 81);
-            pn_control.TabIndex = 7;
+            aboutPage.BackColor = Color.FromArgb(237, 230, 219);
+            aboutPage.Location = new Point(529, 104);
+            aboutPage.Name = "aboutPage";
+            aboutPage.Size = new Size(405, 373);
+            aboutPage.TabIndex = 7;
+            aboutPage.Visible = false;
             // 
             // HomeScreenForm
             // 
@@ -235,6 +237,6 @@
         private Panel pn_btnEmployee;
         private PictureBox pb_btnEmployee;
         private Panel pn_base;
-        private Panel pn_control;
+        private AboutControl aboutPage;
     }
 }
