@@ -48,25 +48,11 @@ namespace H_Resource.Views
             }
         }
 
-        private void pictureBox4_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pb_btnLogin_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Events
         private void pb_btnLogin_MouseEnter(object sender, EventArgs e)
         {
             pb_btnLogin.Image = Properties.Resources.Img_Background_btn_LoginHover;
             pb_btnLogin.Update();
-        }
-
-        private void pb_btnLogin_DragLeave(object sender, EventArgs e)
-        {
-
         }
 
         private void pb_btnLogin_MouseLeave(object sender, EventArgs e)
@@ -103,7 +89,28 @@ namespace H_Resource.Views
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        private void field_Leave(object sender, EventArgs e)
+        {
+            TextBox? field = sender as TextBox;
+            if (field != null)
+            {
+                field.ForeColor = Color.DarkGray;
+            }
+        }
 
+        private void field_click(object sender, EventArgs e)
+        {
+            TextBox? field = sender as TextBox;
+            if (field != null)
+            {
+                field.ForeColor = Color.Black;
+            }
+        }
+
+        #endregion
+
+
+        // Esquinas redondeadas
         private void LoginForm_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
@@ -134,10 +141,35 @@ namespace H_Resource.Views
             path.CloseFigure();
             this.Region = new Region(path);
         }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void Login()
         {
 
+        }
+
+        private void pb_btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                validateInputs();
+                Login();
+            }
+            catch (Exception ex)
+            {
+
+                lb_login_info.Text = ex.Message;
+            }
+        }
+
+        private void validateInputs()
+        {
+            string _user = txt_username.Text;
+            string _password = txt_password.Text;
+            if (_user.Length > 0 || string.IsNullOrWhiteSpace(_user) ) {
+                throw new Exception("El campo usuario no puede estar vacio");
+            }
+            if (_password.Length > 0 || string.IsNullOrWhiteSpace(_password)) {
+                throw new Exception("El campo contraseña no puede estar vacio");
+            }
         }
     }
 }

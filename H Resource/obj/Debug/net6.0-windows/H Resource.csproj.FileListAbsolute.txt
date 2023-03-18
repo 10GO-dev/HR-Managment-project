@@ -58,3 +58,8 @@ D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debu
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EmployeesForm.resources
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.PayrollForm.resources
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.VacationForm.resources
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.AboutControl.resources
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EmployeesForm.resources
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.HomeScreenForm.resources
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.PayrollForm.resources
+D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.VacationForm.resources
