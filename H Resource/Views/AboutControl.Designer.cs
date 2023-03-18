@@ -29,78 +29,46 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutControl));
-            pb_aboutControl = new PictureBox();
             pb_name_aboutControl = new PictureBox();
-            pn_steven_aboutControl = new Panel();
             pb_img_steven_aboutControl = new PictureBox();
             lbl_steven_aboutControl = new Label();
             lbl_francisco_a_aboutControl = new Label();
             lbl_francisco_c_aboutControl = new Label();
             lbl_diego_aboutControl = new Label();
             lbl_chanel_aboutControl = new Label();
-            pn_francisco_a_aboutControl = new Panel();
             pb_img_francisco_a_aboutControl = new PictureBox();
-            pn_francisco_c_aboutControl = new Panel();
             pb_img_francisco_c_aboutControl = new PictureBox();
-            pn_diego_aboutControl = new Panel();
             pb_img_diego_aboutControl = new PictureBox();
-            pn_chanel_aboutControl = new Panel();
             pb_img_chanel_aboutControl = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pb_aboutControl).BeginInit();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pb_name_aboutControl).BeginInit();
-            pn_steven_aboutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_img_steven_aboutControl).BeginInit();
-            pn_francisco_a_aboutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_img_francisco_a_aboutControl).BeginInit();
-            pn_francisco_c_aboutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_img_francisco_c_aboutControl).BeginInit();
-            pn_diego_aboutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_img_diego_aboutControl).BeginInit();
-            pn_chanel_aboutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_img_chanel_aboutControl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pb_aboutControl
-            // 
-            pb_aboutControl.Dock = DockStyle.Fill;
-            pb_aboutControl.Image = (Image)resources.GetObject("pb_aboutControl.Image");
-            pb_aboutControl.Location = new Point(0, 0);
-            pb_aboutControl.Name = "pb_aboutControl";
-            pb_aboutControl.Size = new Size(772, 81);
-            pb_aboutControl.SizeMode = PictureBoxSizeMode.StretchImage;
-            pb_aboutControl.TabIndex = 3;
-            pb_aboutControl.TabStop = false;
-            pb_aboutControl.Click += pictureBox2_Click;
             // 
             // pb_name_aboutControl
             // 
             pb_name_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
-            pb_name_aboutControl.Image = Properties.Resources.Img_Name2;
-            pb_name_aboutControl.Location = new Point(15, 3);
+            pb_name_aboutControl.BackgroundImageLayout = ImageLayout.None;
+            pb_name_aboutControl.Image = Properties.Resources.Img_logoName;
+            pb_name_aboutControl.Location = new Point(30, 17);
             pb_name_aboutControl.Name = "pb_name_aboutControl";
-            pb_name_aboutControl.Size = new Size(150, 30);
+            pb_name_aboutControl.Size = new Size(150, 43);
             pb_name_aboutControl.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_name_aboutControl.TabIndex = 4;
             pb_name_aboutControl.TabStop = false;
-            pb_name_aboutControl.Click += pictureBox1_Click_1;
-            // 
-            // pn_steven_aboutControl
-            // 
-            pn_steven_aboutControl.BackColor = Color.White;
-            pn_steven_aboutControl.Controls.Add(pb_img_steven_aboutControl);
-            pn_steven_aboutControl.Location = new Point(695, 5);
-            pn_steven_aboutControl.Name = "pn_steven_aboutControl";
-            pn_steven_aboutControl.Size = new Size(64, 43);
-            pn_steven_aboutControl.TabIndex = 9;
             // 
             // pb_img_steven_aboutControl
             // 
             pb_img_steven_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
-            pb_img_steven_aboutControl.Dock = DockStyle.Fill;
             pb_img_steven_aboutControl.Image = (Image)resources.GetObject("pb_img_steven_aboutControl.Image");
-            pb_img_steven_aboutControl.Location = new Point(0, 0);
+            pb_img_steven_aboutControl.Location = new Point(221, 217);
             pb_img_steven_aboutControl.Name = "pb_img_steven_aboutControl";
-            pb_img_steven_aboutControl.Size = new Size(64, 43);
+            pb_img_steven_aboutControl.Size = new Size(75, 69);
             pb_img_steven_aboutControl.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_img_steven_aboutControl.TabIndex = 0;
             pb_img_steven_aboutControl.TabStop = false;
@@ -112,7 +80,7 @@
             lbl_steven_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
             lbl_steven_aboutControl.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_steven_aboutControl.ForeColor = Color.FromArgb(26, 60, 64);
-            lbl_steven_aboutControl.Location = new Point(707, 51);
+            lbl_steven_aboutControl.Location = new Point(241, 289);
             lbl_steven_aboutControl.Name = "lbl_steven_aboutControl";
             lbl_steven_aboutControl.Size = new Size(39, 16);
             lbl_steven_aboutControl.TabIndex = 10;
@@ -125,7 +93,7 @@
             lbl_francisco_a_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
             lbl_francisco_a_aboutControl.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_francisco_a_aboutControl.ForeColor = Color.FromArgb(26, 60, 64);
-            lbl_francisco_a_aboutControl.Location = new Point(567, 51);
+            lbl_francisco_a_aboutControl.Location = new Point(98, 289);
             lbl_francisco_a_aboutControl.Name = "lbl_francisco_a_aboutControl";
             lbl_francisco_a_aboutControl.Size = new Size(65, 16);
             lbl_francisco_a_aboutControl.TabIndex = 11;
@@ -138,7 +106,7 @@
             lbl_francisco_c_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
             lbl_francisco_c_aboutControl.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_francisco_c_aboutControl.ForeColor = Color.FromArgb(26, 60, 64);
-            lbl_francisco_c_aboutControl.Location = new Point(439, 51);
+            lbl_francisco_c_aboutControl.Location = new Point(291, 169);
             lbl_francisco_c_aboutControl.Name = "lbl_francisco_c_aboutControl";
             lbl_francisco_c_aboutControl.Size = new Size(65, 16);
             lbl_francisco_c_aboutControl.TabIndex = 12;
@@ -151,7 +119,7 @@
             lbl_diego_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
             lbl_diego_aboutControl.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_diego_aboutControl.ForeColor = Color.FromArgb(26, 60, 64);
-            lbl_diego_aboutControl.Location = new Point(326, 51);
+            lbl_diego_aboutControl.Location = new Point(178, 169);
             lbl_diego_aboutControl.Name = "lbl_diego_aboutControl";
             lbl_diego_aboutControl.Size = new Size(34, 16);
             lbl_diego_aboutControl.TabIndex = 14;
@@ -164,153 +132,116 @@
             lbl_chanel_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
             lbl_chanel_aboutControl.Font = new Font("Arial Narrow", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_chanel_aboutControl.ForeColor = Color.FromArgb(26, 60, 64);
-            lbl_chanel_aboutControl.Location = new Point(196, 51);
+            lbl_chanel_aboutControl.Location = new Point(50, 169);
             lbl_chanel_aboutControl.Name = "lbl_chanel_aboutControl";
             lbl_chanel_aboutControl.Size = new Size(39, 16);
             lbl_chanel_aboutControl.TabIndex = 15;
             lbl_chanel_aboutControl.Text = "Chanel";
             lbl_chanel_aboutControl.Click += pb_img_chanel_aboutControl_Click;
             // 
-            // pn_francisco_a_aboutControl
-            // 
-            pn_francisco_a_aboutControl.BackColor = Color.White;
-            pn_francisco_a_aboutControl.Controls.Add(pb_img_francisco_a_aboutControl);
-            pn_francisco_a_aboutControl.Location = new Point(567, 5);
-            pn_francisco_a_aboutControl.Name = "pn_francisco_a_aboutControl";
-            pn_francisco_a_aboutControl.Size = new Size(64, 43);
-            pn_francisco_a_aboutControl.TabIndex = 10;
-            // 
             // pb_img_francisco_a_aboutControl
             // 
             pb_img_francisco_a_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
-            pb_img_francisco_a_aboutControl.Dock = DockStyle.Fill;
             pb_img_francisco_a_aboutControl.Image = (Image)resources.GetObject("pb_img_francisco_a_aboutControl.Image");
-            pb_img_francisco_a_aboutControl.Location = new Point(0, 0);
+            pb_img_francisco_a_aboutControl.Location = new Point(93, 217);
             pb_img_francisco_a_aboutControl.Name = "pb_img_francisco_a_aboutControl";
-            pb_img_francisco_a_aboutControl.Size = new Size(64, 43);
+            pb_img_francisco_a_aboutControl.Size = new Size(75, 69);
             pb_img_francisco_a_aboutControl.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_img_francisco_a_aboutControl.TabIndex = 0;
             pb_img_francisco_a_aboutControl.TabStop = false;
             pb_img_francisco_a_aboutControl.Click += lbl_francisco_a_aboutControl_Click_1;
             // 
-            // pn_francisco_c_aboutControl
-            // 
-            pn_francisco_c_aboutControl.BackColor = Color.White;
-            pn_francisco_c_aboutControl.Controls.Add(pb_img_francisco_c_aboutControl);
-            pn_francisco_c_aboutControl.Location = new Point(439, 5);
-            pn_francisco_c_aboutControl.Name = "pn_francisco_c_aboutControl";
-            pn_francisco_c_aboutControl.Size = new Size(64, 43);
-            pn_francisco_c_aboutControl.TabIndex = 11;
-            // 
             // pb_img_francisco_c_aboutControl
             // 
             pb_img_francisco_c_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
-            pb_img_francisco_c_aboutControl.Dock = DockStyle.Fill;
             pb_img_francisco_c_aboutControl.Image = (Image)resources.GetObject("pb_img_francisco_c_aboutControl.Image");
-            pb_img_francisco_c_aboutControl.Location = new Point(0, 0);
+            pb_img_francisco_c_aboutControl.Location = new Point(286, 97);
             pb_img_francisco_c_aboutControl.Name = "pb_img_francisco_c_aboutControl";
-            pb_img_francisco_c_aboutControl.Size = new Size(64, 43);
+            pb_img_francisco_c_aboutControl.Size = new Size(75, 69);
             pb_img_francisco_c_aboutControl.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_img_francisco_c_aboutControl.TabIndex = 0;
             pb_img_francisco_c_aboutControl.TabStop = false;
             pb_img_francisco_c_aboutControl.Click += pb_img_francisco_c_aboutControl_Click_1;
             // 
-            // pn_diego_aboutControl
-            // 
-            pn_diego_aboutControl.BackColor = Color.White;
-            pn_diego_aboutControl.Controls.Add(pb_img_diego_aboutControl);
-            pn_diego_aboutControl.Location = new Point(311, 5);
-            pn_diego_aboutControl.Name = "pn_diego_aboutControl";
-            pn_diego_aboutControl.Size = new Size(64, 43);
-            pn_diego_aboutControl.TabIndex = 12;
-            // 
             // pb_img_diego_aboutControl
             // 
             pb_img_diego_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
-            pb_img_diego_aboutControl.Dock = DockStyle.Fill;
             pb_img_diego_aboutControl.Image = (Image)resources.GetObject("pb_img_diego_aboutControl.Image");
-            pb_img_diego_aboutControl.Location = new Point(0, 0);
+            pb_img_diego_aboutControl.Location = new Point(158, 97);
             pb_img_diego_aboutControl.Name = "pb_img_diego_aboutControl";
-            pb_img_diego_aboutControl.Size = new Size(64, 43);
+            pb_img_diego_aboutControl.Size = new Size(75, 69);
             pb_img_diego_aboutControl.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_img_diego_aboutControl.TabIndex = 0;
             pb_img_diego_aboutControl.TabStop = false;
             pb_img_diego_aboutControl.Click += pb_img_diego_aboutControl_Click_1;
             // 
-            // pn_chanel_aboutControl
-            // 
-            pn_chanel_aboutControl.BackColor = Color.White;
-            pn_chanel_aboutControl.Controls.Add(pb_img_chanel_aboutControl);
-            pn_chanel_aboutControl.Location = new Point(183, 5);
-            pn_chanel_aboutControl.Name = "pn_chanel_aboutControl";
-            pn_chanel_aboutControl.Size = new Size(64, 43);
-            pn_chanel_aboutControl.TabIndex = 13;
-            // 
             // pb_img_chanel_aboutControl
             // 
             pb_img_chanel_aboutControl.BackColor = Color.FromArgb(237, 230, 219);
-            pb_img_chanel_aboutControl.Dock = DockStyle.Fill;
             pb_img_chanel_aboutControl.Image = (Image)resources.GetObject("pb_img_chanel_aboutControl.Image");
-            pb_img_chanel_aboutControl.Location = new Point(0, 0);
+            pb_img_chanel_aboutControl.Location = new Point(30, 97);
             pb_img_chanel_aboutControl.Name = "pb_img_chanel_aboutControl";
-            pb_img_chanel_aboutControl.Size = new Size(64, 43);
+            pb_img_chanel_aboutControl.Size = new Size(75, 69);
             pb_img_chanel_aboutControl.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_img_chanel_aboutControl.TabIndex = 0;
             pb_img_chanel_aboutControl.TabStop = false;
             pb_img_chanel_aboutControl.Click += pb_img_chanel_aboutControl_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(357, 17);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(31, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // AboutControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(26, 60, 64);
-            Controls.Add(pn_chanel_aboutControl);
-            Controls.Add(pn_diego_aboutControl);
-            Controls.Add(pn_francisco_c_aboutControl);
-            Controls.Add(pn_francisco_a_aboutControl);
+            BackColor = Color.FromArgb(237, 230, 219);
+            Controls.Add(pictureBox1);
+            Controls.Add(pb_img_chanel_aboutControl);
+            Controls.Add(pb_img_diego_aboutControl);
+            Controls.Add(pb_img_francisco_c_aboutControl);
+            Controls.Add(pb_img_francisco_a_aboutControl);
+            Controls.Add(pb_img_steven_aboutControl);
+            Controls.Add(pb_name_aboutControl);
             Controls.Add(lbl_chanel_aboutControl);
             Controls.Add(lbl_diego_aboutControl);
             Controls.Add(lbl_francisco_c_aboutControl);
             Controls.Add(lbl_francisco_a_aboutControl);
             Controls.Add(lbl_steven_aboutControl);
-            Controls.Add(pn_steven_aboutControl);
-            Controls.Add(pb_name_aboutControl);
-            Controls.Add(pb_aboutControl);
+            Location = new Point(683, 15);
             Name = "AboutControl";
-            Size = new Size(772, 81);
-            ((System.ComponentModel.ISupportInitialize)pb_aboutControl).EndInit();
+            Size = new Size(405, 367);
+            Paint += AboutControl_Paint;
             ((System.ComponentModel.ISupportInitialize)pb_name_aboutControl).EndInit();
-            pn_steven_aboutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pb_img_steven_aboutControl).EndInit();
-            pn_francisco_a_aboutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pb_img_francisco_a_aboutControl).EndInit();
-            pn_francisco_c_aboutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pb_img_francisco_c_aboutControl).EndInit();
-            pn_diego_aboutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pb_img_diego_aboutControl).EndInit();
-            pn_chanel_aboutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pb_img_chanel_aboutControl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private PictureBox pb_aboutControl;
         private PictureBox pb_name_aboutControl;
-        private Panel pn_steven_aboutControl;
         private Label lbl_steven_aboutControl;
         private Label lbl_francisco_a_aboutControl;
         private Label lbl_francisco_c_aboutControl;
         private Label lbl_diego_aboutControl;
         private Label lbl_chanel_aboutControl;
-        private Panel pn_francisco_a_aboutControl;
-        private Panel pn_francisco_c_aboutControl;
-        private Panel pn_diego_aboutControl;
-        private Panel pn_chanel_aboutControl;
         private PictureBox pb_img_steven_aboutControl;
         private PictureBox pb_img_francisco_a_aboutControl;
         private PictureBox pb_img_francisco_c_aboutControl;
         private PictureBox pb_img_diego_aboutControl;
         private PictureBox pb_img_chanel_aboutControl;
+        private PictureBox pictureBox1;
     }
 }

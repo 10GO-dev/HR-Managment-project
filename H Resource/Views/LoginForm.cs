@@ -1,4 +1,5 @@
-﻿using System;
+﻿using H_Resource.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -143,9 +144,30 @@ namespace H_Resource.Views
         }
         private void Login()
         {
-
+            string _user = txt_username.Text.Trim();
+            string _password = txt_password.Text.Trim();
+            using (HrmsDbContext db = new HrmsDbContext())
+            {
+                try
+                {
+                    User user = db.Users.Where(u => u.UserName == _user).First();
+                    if (user.Password == _password)
+                    {
+                        HomeScreenForm hm = HomeScreenForm.getIntance();
+                        hm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        throw new Exception("Contraseña incorrecta");
+                    }
+                }
+                catch (InvalidOperationException)
+                {
+                    throw new Exception("Usuario no existe");
+                }
+            }
         }
-
         private void pb_btnLogin_Click(object sender, EventArgs e)
         {
             try
@@ -155,19 +177,22 @@ namespace H_Resource.Views
             }
             catch (Exception ex)
             {
-
                 lb_login_info.Text = ex.Message;
             }
         }
 
         private void validateInputs()
         {
-            string _user = txt_username.Text;
-            string _password = txt_password.Text;
-            if (_user.Length > 0 || string.IsNullOrWhiteSpace(_user) ) {
+            string _user = txt_username.Text.Trim();
+            string _password = txt_password.Text.Trim();
+            if (_user.Length <= 0 || string.IsNullOrWhiteSpace(_user))
+            {
+                txt_username.Focus();
                 throw new Exception("El campo usuario no puede estar vacio");
             }
-            if (_password.Length > 0 || string.IsNullOrWhiteSpace(_password)) {
+            if (_password.Length <= 0 || string.IsNullOrWhiteSpace(_password))
+            {
+                txt_password.Focus();
                 throw new Exception("El campo contraseña no puede estar vacio");
             }
         }

@@ -72,11 +72,11 @@
             // lb_login_info
             // 
             lb_login_info.AutoSize = true;
-            lb_login_info.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_login_info.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lb_login_info.ForeColor = Color.Red;
             lb_login_info.Location = new Point(534, 303);
             lb_login_info.Name = "lb_login_info";
-            lb_login_info.Size = new Size(0, 16);
+            lb_login_info.Size = new Size(0, 20);
             lb_login_info.TabIndex = 13;
             // 
             // pb_login_Image
@@ -220,8 +220,6 @@
         private TextBox txt_password;
         private Label lb_username;
         private Label lb_password;
-        private TextBox textBox1;
-        private Label label2;
         private PictureBox pb_txt_password;
         private PictureBox pb_login_Image;
         private PictureBox pb_btnLogin;
