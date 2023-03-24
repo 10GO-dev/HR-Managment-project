@@ -309,5 +309,15 @@ namespace H_Resource.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Img_Txt_Nomina {
+            get {
+                object obj = ResourceManager.GetObject("Img_Txt_Nomina", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
