@@ -144,15 +144,7 @@ namespace H_Resource.Views
             btn_Delete_EmployeesControl.Visible = btn_Delete_EmployeesControl.Visible ? false : true;
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.Style = 0x20000; // Minimize borderless form from taskbar
-                return cp;
-            }
-        }
+        
 
     }
 }

@@ -86,7 +86,7 @@ namespace H_Resource.Views
 
         }
 
-        private void Tstbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txtbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
@@ -94,6 +94,22 @@ namespace H_Resource.Views
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void Txtbox_Salary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void Cmbox_Department_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Seleccione una de las opciones ya establecidas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            e.Handled = true;
         }
     }
 }

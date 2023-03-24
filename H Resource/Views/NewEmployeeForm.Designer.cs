@@ -54,12 +54,17 @@
             Txtbox_idcard = new TextBox();
             Lbl_Idcard = new Label();
             Pn_Phone = new Panel();
-            Tstbox_Phone = new TextBox();
+            Txtbox_Phone = new TextBox();
             Lbl_Phone = new Label();
             Lbl_Dateofhire = new Label();
             Lbl_Birthdate = new Label();
             Dtp_Dateofhire = new DateTimePicker();
             Dtp_Birthdate = new DateTimePicker();
+            Pn_Salary = new Panel();
+            Txtbox_Salary = new TextBox();
+            Lbl_Salary = new Label();
+            Cmbox_Department = new ComboBox();
+            Lbl_Department = new Label();
             ((System.ComponentModel.ISupportInitialize)Pb_backgound_New).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb_btnConfirmar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb_btnAtras).BeginInit();
@@ -72,6 +77,7 @@
             Pn_Nationality.SuspendLayout();
             Pn_Idcard.SuspendLayout();
             Pn_Phone.SuspendLayout();
+            Pn_Salary.SuspendLayout();
             SuspendLayout();
             // 
             // Pb_backgound_New
@@ -271,7 +277,7 @@
             Pn_Nationality.BackgroundImage = (Image)resources.GetObject("Pn_Nationality.BackgroundImage");
             Pn_Nationality.BackgroundImageLayout = ImageLayout.Stretch;
             Pn_Nationality.Controls.Add(Txtbox_Nationality);
-            Pn_Nationality.Location = new Point(495, 112);
+            Pn_Nationality.Location = new Point(492, 81);
             Pn_Nationality.Name = "Pn_Nationality";
             Pn_Nationality.Size = new Size(236, 31);
             Pn_Nationality.TabIndex = 17;
@@ -290,7 +296,7 @@
             Lbl_Nationaliy.AutoSize = true;
             Lbl_Nationaliy.BackColor = Color.FromArgb(237, 230, 219);
             Lbl_Nationaliy.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Lbl_Nationaliy.Location = new Point(495, 89);
+            Lbl_Nationaliy.Location = new Point(492, 58);
             Lbl_Nationaliy.Name = "Lbl_Nationaliy";
             Lbl_Nationaliy.Size = new Size(86, 20);
             Lbl_Nationaliy.TabIndex = 16;
@@ -302,7 +308,7 @@
             Pn_Idcard.BackgroundImage = (Image)resources.GetObject("Pn_Idcard.BackgroundImage");
             Pn_Idcard.BackgroundImageLayout = ImageLayout.Stretch;
             Pn_Idcard.Controls.Add(Txtbox_idcard);
-            Pn_Idcard.Location = new Point(495, 169);
+            Pn_Idcard.Location = new Point(492, 138);
             Pn_Idcard.Name = "Pn_Idcard";
             Pn_Idcard.Size = new Size(236, 31);
             Pn_Idcard.TabIndex = 19;
@@ -323,7 +329,7 @@
             Lbl_Idcard.AutoSize = true;
             Lbl_Idcard.BackColor = Color.FromArgb(237, 230, 219);
             Lbl_Idcard.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Lbl_Idcard.Location = new Point(495, 146);
+            Lbl_Idcard.Location = new Point(492, 115);
             Lbl_Idcard.Name = "Lbl_Idcard";
             Lbl_Idcard.Size = new Size(51, 20);
             Lbl_Idcard.TabIndex = 18;
@@ -334,29 +340,29 @@
             Pn_Phone.BackColor = Color.FromArgb(237, 230, 219);
             Pn_Phone.BackgroundImage = (Image)resources.GetObject("Pn_Phone.BackgroundImage");
             Pn_Phone.BackgroundImageLayout = ImageLayout.Stretch;
-            Pn_Phone.Controls.Add(Tstbox_Phone);
-            Pn_Phone.Location = new Point(495, 226);
+            Pn_Phone.Controls.Add(Txtbox_Phone);
+            Pn_Phone.Location = new Point(492, 195);
             Pn_Phone.Name = "Pn_Phone";
             Pn_Phone.Size = new Size(236, 31);
             Pn_Phone.TabIndex = 21;
             // 
-            // Tstbox_Phone
+            // Txtbox_Phone
             // 
-            Tstbox_Phone.BackColor = Color.FromArgb(237, 230, 219);
-            Tstbox_Phone.BorderStyle = BorderStyle.None;
-            Tstbox_Phone.Location = new Point(3, 8);
-            Tstbox_Phone.MaxLength = 10;
-            Tstbox_Phone.Name = "Tstbox_Phone";
-            Tstbox_Phone.Size = new Size(230, 16);
-            Tstbox_Phone.TabIndex = 7;
-            Tstbox_Phone.KeyPress += Tstbox_Phone_KeyPress;
+            Txtbox_Phone.BackColor = Color.FromArgb(237, 230, 219);
+            Txtbox_Phone.BorderStyle = BorderStyle.None;
+            Txtbox_Phone.Location = new Point(3, 8);
+            Txtbox_Phone.MaxLength = 10;
+            Txtbox_Phone.Name = "Txtbox_Phone";
+            Txtbox_Phone.Size = new Size(230, 16);
+            Txtbox_Phone.TabIndex = 7;
+            Txtbox_Phone.KeyPress += Txtbox_Phone_KeyPress;
             // 
             // Lbl_Phone
             // 
             Lbl_Phone.AutoSize = true;
             Lbl_Phone.BackColor = Color.FromArgb(237, 230, 219);
             Lbl_Phone.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Lbl_Phone.Location = new Point(495, 203);
+            Lbl_Phone.Location = new Point(492, 172);
             Lbl_Phone.Name = "Lbl_Phone";
             Lbl_Phone.Size = new Size(61, 20);
             Lbl_Phone.TabIndex = 20;
@@ -367,7 +373,7 @@
             Lbl_Dateofhire.AutoSize = true;
             Lbl_Dateofhire.BackColor = Color.FromArgb(237, 230, 219);
             Lbl_Dateofhire.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Lbl_Dateofhire.Location = new Point(65, 311);
+            Lbl_Dateofhire.Location = new Point(65, 286);
             Lbl_Dateofhire.Name = "Lbl_Dateofhire";
             Lbl_Dateofhire.Size = new Size(134, 20);
             Lbl_Dateofhire.TabIndex = 22;
@@ -378,7 +384,7 @@
             Lbl_Birthdate.AutoSize = true;
             Lbl_Birthdate.BackColor = Color.FromArgb(237, 230, 219);
             Lbl_Birthdate.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Lbl_Birthdate.Location = new Point(498, 311);
+            Lbl_Birthdate.Location = new Point(65, 337);
             Lbl_Birthdate.Name = "Lbl_Birthdate";
             Lbl_Birthdate.Size = new Size(141, 20);
             Lbl_Birthdate.TabIndex = 23;
@@ -388,7 +394,7 @@
             // 
             Dtp_Dateofhire.CalendarMonthBackground = Color.FromArgb(29, 92, 99);
             Dtp_Dateofhire.Format = DateTimePickerFormat.Short;
-            Dtp_Dateofhire.Location = new Point(65, 334);
+            Dtp_Dateofhire.Location = new Point(65, 311);
             Dtp_Dateofhire.Name = "Dtp_Dateofhire";
             Dtp_Dateofhire.Size = new Size(154, 23);
             Dtp_Dateofhire.TabIndex = 24;
@@ -401,10 +407,65 @@
             Dtp_Birthdate.CalendarTitleForeColor = Color.FromArgb(29, 92, 99);
             Dtp_Birthdate.CalendarTrailingForeColor = Color.FromArgb(29, 92, 99);
             Dtp_Birthdate.Format = DateTimePickerFormat.Short;
-            Dtp_Birthdate.Location = new Point(498, 334);
+            Dtp_Birthdate.Location = new Point(65, 360);
             Dtp_Birthdate.Name = "Dtp_Birthdate";
             Dtp_Birthdate.Size = new Size(154, 23);
             Dtp_Birthdate.TabIndex = 25;
+            // 
+            // Pn_Salary
+            // 
+            Pn_Salary.BackColor = Color.FromArgb(237, 230, 219);
+            Pn_Salary.BackgroundImage = (Image)resources.GetObject("Pn_Salary.BackgroundImage");
+            Pn_Salary.BackgroundImageLayout = ImageLayout.Stretch;
+            Pn_Salary.Controls.Add(Txtbox_Salary);
+            Pn_Salary.Location = new Point(492, 252);
+            Pn_Salary.Name = "Pn_Salary";
+            Pn_Salary.Size = new Size(236, 31);
+            Pn_Salary.TabIndex = 27;
+            // 
+            // Txtbox_Salary
+            // 
+            Txtbox_Salary.BackColor = Color.FromArgb(237, 230, 219);
+            Txtbox_Salary.BorderStyle = BorderStyle.None;
+            Txtbox_Salary.Location = new Point(3, 8);
+            Txtbox_Salary.Name = "Txtbox_Salary";
+            Txtbox_Salary.Size = new Size(230, 16);
+            Txtbox_Salary.TabIndex = 7;
+            Txtbox_Salary.KeyPress += Txtbox_Salary_KeyPress;
+            // 
+            // Lbl_Salary
+            // 
+            Lbl_Salary.AutoSize = true;
+            Lbl_Salary.BackColor = Color.FromArgb(237, 230, 219);
+            Lbl_Salary.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Lbl_Salary.Location = new Point(492, 229);
+            Lbl_Salary.Name = "Lbl_Salary";
+            Lbl_Salary.Size = new Size(50, 20);
+            Lbl_Salary.TabIndex = 26;
+            Lbl_Salary.Text = "Salario";
+            // 
+            // Cmbox_Department
+            // 
+            Cmbox_Department.BackColor = Color.FromArgb(237, 230, 219);
+            Cmbox_Department.FlatStyle = FlatStyle.Popup;
+            Cmbox_Department.Items.AddRange(new object[] { "Finanzas ", "Recursos Humanos ", "Logistica ", "Tecnologico ", "Publicidad" });
+            Cmbox_Department.Location = new Point(492, 311);
+            Cmbox_Department.Name = "Cmbox_Department";
+            Cmbox_Department.Size = new Size(236, 23);
+            Cmbox_Department.TabIndex = 28;
+            Cmbox_Department.Text = "Departamento";
+            Cmbox_Department.KeyPress += Cmbox_Department_KeyPress;
+            // 
+            // Lbl_Department
+            // 
+            Lbl_Department.AutoSize = true;
+            Lbl_Department.BackColor = Color.FromArgb(237, 230, 219);
+            Lbl_Department.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Lbl_Department.Location = new Point(492, 286);
+            Lbl_Department.Name = "Lbl_Department";
+            Lbl_Department.Size = new Size(92, 20);
+            Lbl_Department.TabIndex = 29;
+            Lbl_Department.Text = "Departamento";
             // 
             // NewEmployeeForm
             // 
@@ -412,6 +473,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(29, 92, 99);
             ClientSize = new Size(800, 450);
+            Controls.Add(Lbl_Department);
+            Controls.Add(Cmbox_Department);
+            Controls.Add(Pn_Salary);
+            Controls.Add(Lbl_Salary);
             Controls.Add(Dtp_Birthdate);
             Controls.Add(Dtp_Dateofhire);
             Controls.Add(Lbl_Birthdate);
@@ -459,6 +524,8 @@
             Pn_Idcard.PerformLayout();
             Pn_Phone.ResumeLayout(false);
             Pn_Phone.PerformLayout();
+            Pn_Salary.ResumeLayout(false);
+            Pn_Salary.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -490,11 +557,16 @@
         private TextBox Txtbox_idcard;
         private Label Lbl_Idcard;
         private Panel Pn_Phone;
-        private TextBox Tstbox_Phone;
+        private TextBox Txtbox_Phone;
         private Label Lbl_Phone;
         private Label Lbl_Dateofhire;
         private Label Lbl_Birthdate;
         private DateTimePicker Dtp_Dateofhire;
         private DateTimePicker Dtp_Birthdate;
+        private Panel Pn_Salary;
+        private TextBox Txtbox_Salary;
+        private Label Lbl_Salary;
+        private ComboBox Cmbox_Department;
+        private Label Lbl_Department;
     }
 }
