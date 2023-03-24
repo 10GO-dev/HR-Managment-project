@@ -4,6 +4,12 @@
     <Compile Update="Views\AboutControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Views\Btn_Delete_EmployeesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\EditEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\EmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -11,6 +17,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\NewEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\PayrollForm.cs">
