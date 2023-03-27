@@ -90,7 +90,6 @@ namespace H_Resource.Views
             Pb_btn_New.Region = rg;
         }
 
-
         private void Pb_btn_Delete_MouseEnter(object sender, EventArgs e)
         {
             Pb_btn_DeleteTxt.Visible = Pb_btn_DeleteTxt.Visible ? false : true;

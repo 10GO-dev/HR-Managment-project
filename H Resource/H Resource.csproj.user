@@ -10,6 +10,9 @@
     <Compile Update="Views\EditEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\EditVacationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\EmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -154,3 +154,4 @@ D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debu
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.Btn_Delete_EmployeesControl.resources
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.NewEmployeeForm.resources
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EditEmployeeForm.resources
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EditVacationForm.resources
