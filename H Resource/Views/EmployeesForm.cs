@@ -140,10 +140,12 @@ namespace H_Resource.Views
 
         private void Pb_btn_Delete_Click(object sender, EventArgs e)
         {
-            btn_Delete_EmployeesControl.Visible = btn_Delete_EmployeesControl.Visible ? false : true;
+
         }
 
-        
+        private void Pb_btnCloseEmployees_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

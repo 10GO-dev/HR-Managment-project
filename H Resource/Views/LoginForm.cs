@@ -1,5 +1,4 @@
-﻿using H_Resource.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using H_Resource.Models;
 
 namespace H_Resource.Views
 {
@@ -173,7 +173,7 @@ namespace H_Resource.Views
             try
             {
                 validateInputs();
-                Login();
+                //Login();
             }
             catch (Exception ex)
             {

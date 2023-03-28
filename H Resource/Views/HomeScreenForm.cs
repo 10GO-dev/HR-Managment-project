@@ -16,7 +16,7 @@ namespace H_Resource.Views
 {
     public partial class HomeScreenForm : Form
     {
-        private static HomeScreenForm instance;
+        private static HomeScreenForm? instance;
         private HomeScreenForm()
         {
             InitializeComponent();
