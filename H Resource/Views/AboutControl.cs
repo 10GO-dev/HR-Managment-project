@@ -1,4 +1,5 @@
-﻿using System;
+﻿using H_Resource.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -110,6 +111,16 @@ namespace H_Resource.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Resources.img_close_button_hover;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Resources.img_about_btnClose;
         }
     }
 }

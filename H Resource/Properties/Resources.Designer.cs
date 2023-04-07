@@ -63,6 +63,16 @@ namespace H_Resource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HomeLogo {
+            get {
+                object obj = ResourceManager.GetObject("HomeLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_Back_Btn {
             get {
                 object obj = ResourceManager.GetObject("Icon_Back_Btn", resourceCulture);
@@ -73,9 +83,9 @@ namespace H_Resource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icon_Close_Btn {
+        internal static System.Drawing.Bitmap img_about_btnClose {
             get {
-                object obj = ResourceManager.GetObject("Icon_Close_Btn", resourceCulture);
+                object obj = ResourceManager.GetObject("img_about_btnClose", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +313,9 @@ namespace H_Resource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img_close_button_hover2 {
+        internal static System.Drawing.Bitmap img_close_button {
             get {
-                object obj = ResourceManager.GetObject("img_close_button_hover2", resourceCulture);
+                object obj = ResourceManager.GetObject("img_close_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +323,9 @@ namespace H_Resource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img_close_button2 {
+        internal static System.Drawing.Bitmap img_close_button_hover {
             get {
-                object obj = ResourceManager.GetObject("img_close_button2", resourceCulture);
+                object obj = ResourceManager.GetObject("img_close_button_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +353,79 @@ namespace H_Resource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap img_maximize_button {
+            get {
+                object obj = ResourceManager.GetObject("img_maximize_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_maximize_button_hover {
+            get {
+                object obj = ResourceManager.GetObject("img_maximize_button_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_maximized_button {
+            get {
+                object obj = ResourceManager.GetObject("img_maximized_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_maximized_button_hover {
+            get {
+                object obj = ResourceManager.GetObject("img_maximized_button_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_minimize_button {
+            get {
+                object obj = ResourceManager.GetObject("img_minimize_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_minimize_button_hover {
+            get {
+                object obj = ResourceManager.GetObject("img_minimize_button_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Img_Txt_Nomina {
             get {
                 object obj = ResourceManager.GetObject("Img_Txt_Nomina", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoNameCornSilk {
+            get {
+                object obj = ResourceManager.GetObject("LogoNameCornSilk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

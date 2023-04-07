@@ -7,28 +7,28 @@
     <Compile Update="Views\Btn_Delete_EmployeesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\EditVacationForm.cs">
+    <Compile Update="Views\EditVacationView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\EmployeesForm.cs">
+    <Compile Update="Views\EmployeeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\HomeScreenForm.cs">
+    <Compile Update="Views\HomeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\LoginForm.cs">
+    <Compile Update="Views\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\MainForm.cs">
+    <Compile Update="Views\MainContainer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\NewEmployeeForm.cs">
+    <Compile Update="Views\AddEmployeeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\PayrollForm.cs">
+    <Compile Update="Views\PayrollView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\VacationForm.cs">
+    <Compile Update="Views\VacationView.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

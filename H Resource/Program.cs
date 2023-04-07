@@ -1,4 +1,5 @@
 
+using H_Resource.Presenters;
 using H_Resource.Views;
 
 namespace H_Resource
@@ -14,7 +15,9 @@ namespace H_Resource
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new NewEmployeeForm());
+            IMainContainer view = MainContainer.GetInstance();
+            new MainContainerPresenter(view);
+            Application.Run((Form)view);
         }
     }
-}
+}   

@@ -1,2 +1,25 @@
-.vs/
 H Resourse/.vs/
+# Archivos de compilación
+bin/
+obj/
+
+# Archivos temporales
+*.bak
+*.tmp
+
+# Archivos de configuración
+*.config
+*.settings
+
+# Archivos de caché
+.vs/
+*.suo
+*.user
+
+# Archivos de registro
+*.log
+*.errors
+
+# Archivos de respaldo
+*~
+*.cs.bak

@@ -15,19 +15,19 @@ public partial class HrmsDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Country> Countries { get; set; }
+    public virtual DbSet<CountryModel> Countries { get; set; }
 
-    public virtual DbSet<Department> Departments { get; set; }
+    public virtual DbSet<DepartmentModel> Departments { get; set; }
 
-    public virtual DbSet<Employee> Employees { get; set; }
+    public virtual DbSet<EmployeeModel> Employees { get; set; }
 
-    public virtual DbSet<Gender> Genders { get; set; }
+    public virtual DbSet<GenderModel> Genders { get; set; }
 
-    public virtual DbSet<Payroll> Payrolls { get; set; }
+    public virtual DbSet<PayrollModel> Payrolls { get; set; }
 
-    public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<UserModel> Users { get; set; }
 
-    public virtual DbSet<Vacation> Vacations { get; set; }
+    public virtual DbSet<VacationModel> Vacations { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -35,7 +35,7 @@ public partial class HrmsDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Country>(entity =>
+        modelBuilder.Entity<CountryModel>(entity =>
         {
             entity.ToTable("Country");
 
@@ -45,7 +45,7 @@ public partial class HrmsDbContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<Department>(entity =>
+        modelBuilder.Entity<DepartmentModel>(entity =>
         {
             entity.HasKey(e => e.DepartmentId).HasName("PK__Departme__B2079BCDF08DEFFF");
 
@@ -57,7 +57,7 @@ public partial class HrmsDbContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<Employee>(entity =>
+        modelBuilder.Entity<EmployeeModel>(entity =>
         {
             entity.HasKey(e => e.EmployeeId).HasName("PK__tmp_ms_x__7AD04FF16BCF9342");
 
@@ -95,17 +95,17 @@ public partial class HrmsDbContext : DbContext
                 .HasConstraintName("FK_Employees_Department");
 
             entity.HasOne(d => d.EmployeeNavigation).WithOne(p => p.Employee)
-                .HasForeignKey<Employee>(d => d.EmployeeId)
+                .HasForeignKey<EmployeeModel>(d => d.EmployeeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Employees_Country");
 
             entity.HasOne(d => d.Employee1).WithOne(p => p.Employee)
-                .HasForeignKey<Employee>(d => d.EmployeeId)
+                .HasForeignKey<EmployeeModel>(d => d.EmployeeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Employees_Gender");
         });
 
-        modelBuilder.Entity<Gender>(entity =>
+        modelBuilder.Entity<GenderModel>(entity =>
         {
             entity.ToTable("Gender");
 
@@ -115,7 +115,7 @@ public partial class HrmsDbContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<Payroll>(entity =>
+        modelBuilder.Entity<PayrollModel>(entity =>
         {
             entity.HasKey(e => e.PayrollId).HasName("PK__Payroll__99DFC69208A96E01");
 
@@ -137,7 +137,7 @@ public partial class HrmsDbContext : DbContext
                 .HasConstraintName("FK__Payroll__Employe__6EF57B66");
         });
 
-        modelBuilder.Entity<User>(entity =>
+        modelBuilder.Entity<UserModel>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Users__1788CCAC6F639A37");
 
@@ -152,7 +152,7 @@ public partial class HrmsDbContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<Vacation>(entity =>
+        modelBuilder.Entity<VacationModel>(entity =>
         {
             entity.HasKey(e => e.VacationId).HasName("PK__Vacation__E420DF8425837AC9");
 
