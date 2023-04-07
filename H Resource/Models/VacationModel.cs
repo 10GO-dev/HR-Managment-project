@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace H_Resource.Models;
 
-public partial class Vacation
+public partial class VacationModel
 {
     public int VacationId { get; set; }
 

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace H_Resource.Models;
 
-public partial class Employee
+public partial class EmployeeModel
 {
     [DisplayName("Employee ID")]
     public int EmployeeId { get; set; }
@@ -44,13 +44,13 @@ public partial class Employee
 
     public int? CountryId { get; set; }
     [DisplayName("Department")]
-    public virtual Department? Department { get; set; }
+    public virtual DepartmentModel? Department { get; set; }
     [DisplayName("Gender")]
-    public virtual Gender Employee1 { get; set; } = null!;
+    public virtual GenderModel Employee1 { get; set; } = null!;
     [DisplayName("Country")]
-    public virtual Country EmployeeNavigation { get; set; } = null!;
+    public virtual CountryModel EmployeeNavigation { get; set; } = null!;
 
-    public virtual ICollection<Payroll> Payrolls { get; } = new List<Payroll>();
+    public virtual ICollection<PayrollModel> Payrolls { get; } = new List<PayrollModel>();
 
-    public virtual ICollection<Vacation> Vacations { get; } = new List<Vacation>();
+    public virtual ICollection<VacationModel> Vacations { get; } = new List<VacationModel>();
 }

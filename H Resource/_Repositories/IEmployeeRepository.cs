@@ -9,12 +9,12 @@ namespace H_Resource._Repositories
 {
     internal interface IEmployeeRepository
     {
-        void Add(Employee employeeModel);
-        void Edit(Employee employeeModel);
-        void Delete(Employee employeeModel);
-        void Update(Employee employeeModel);
-        IEnumerable<Employee> GetAll();
-        IEnumerable<Employee> FindByValue();
+        void Add(EmployeeModel employeeModel);
+        void Edit(EmployeeModel employeeModel);
+        void Delete(EmployeeModel employeeModel);
+        void Update(EmployeeModel employeeModel);
+        IEnumerable<EmployeeModel> GetAll();
+        IEnumerable<EmployeeModel> FindByValue();
 
     }
 }

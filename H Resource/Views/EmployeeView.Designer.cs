@@ -37,11 +37,11 @@
             Pb_btn_New = new PictureBox();
             Pb_btn_Edit = new PictureBox();
             Pb_btn_Delete = new PictureBox();
-            Tbl_layaut_Box = new TableLayoutPanel();
             Pn_bgTablaEmployees = new Panel();
             Pb_SearchBar = new PictureBox();
             Pb_Shape = new PictureBox();
             Txtbox_SearchBar = new TextBox();
+            cb_SearchFilter = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)Pb_txtEmployees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb_btnCloseEmployees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb_btn_NewTxt).BeginInit();
@@ -58,9 +58,9 @@
             // Pb_txtEmployees
             // 
             Pb_txtEmployees.Image = (Image)resources.GetObject("Pb_txtEmployees.Image");
-            Pb_txtEmployees.Location = new Point(37, 4);
+            Pb_txtEmployees.Location = new Point(37, 16);
             Pb_txtEmployees.Name = "Pb_txtEmployees";
-            Pb_txtEmployees.Size = new Size(150, 39);
+            Pb_txtEmployees.Size = new Size(150, 47);
             Pb_txtEmployees.SizeMode = PictureBoxSizeMode.StretchImage;
             Pb_txtEmployees.TabIndex = 0;
             Pb_txtEmployees.TabStop = false;
@@ -69,7 +69,7 @@
             // 
             Pb_btnCloseEmployees.Cursor = Cursors.Hand;
             Pb_btnCloseEmployees.Image = Properties.Resources.img_close_button;
-            Pb_btnCloseEmployees.Location = new Point(996, 12);
+            Pb_btnCloseEmployees.Location = new Point(1039, 12);
             Pb_btnCloseEmployees.Name = "Pb_btnCloseEmployees";
             Pb_btnCloseEmployees.Size = new Size(32, 31);
             Pb_btnCloseEmployees.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -84,7 +84,7 @@
             Pb_btn_NewTxt.BackColor = Color.FromArgb(237, 230, 219);
             Pb_btn_NewTxt.Cursor = Cursors.Hand;
             Pb_btn_NewTxt.Image = (Image)resources.GetObject("Pb_btn_NewTxt.Image");
-            Pb_btn_NewTxt.Location = new Point(915, 52);
+            Pb_btn_NewTxt.Location = new Point(826, 15);
             Pb_btn_NewTxt.Name = "Pb_btn_NewTxt";
             Pb_btn_NewTxt.Size = new Size(100, 29);
             Pb_btn_NewTxt.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -97,7 +97,7 @@
             Pb_btn_DeleteTxt.BackColor = Color.FromArgb(237, 230, 219);
             Pb_btn_DeleteTxt.Cursor = Cursors.Hand;
             Pb_btn_DeleteTxt.Image = (Image)resources.GetObject("Pb_btn_DeleteTxt.Image");
-            Pb_btn_DeleteTxt.Location = new Point(915, 122);
+            Pb_btn_DeleteTxt.Location = new Point(826, 85);
             Pb_btn_DeleteTxt.Name = "Pb_btn_DeleteTxt";
             Pb_btn_DeleteTxt.Size = new Size(100, 29);
             Pb_btn_DeleteTxt.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -111,7 +111,7 @@
             Pb_btn_EditTxt.BackColor = Color.FromArgb(237, 230, 219);
             Pb_btn_EditTxt.Cursor = Cursors.Hand;
             Pb_btn_EditTxt.Image = (Image)resources.GetObject("Pb_btn_EditTxt.Image");
-            Pb_btn_EditTxt.Location = new Point(915, 87);
+            Pb_btn_EditTxt.Location = new Point(826, 50);
             Pb_btn_EditTxt.Name = "Pb_btn_EditTxt";
             Pb_btn_EditTxt.Size = new Size(100, 29);
             Pb_btn_EditTxt.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -124,7 +124,7 @@
             Pb_btn_New.Cursor = Cursors.Hand;
             Pb_btn_New.Image = (Image)resources.GetObject("Pb_btn_New.Image");
             Pb_btn_New.InitialImage = Properties.Resources.Img_Btn_New;
-            Pb_btn_New.Location = new Point(993, 50);
+            Pb_btn_New.Location = new Point(904, 13);
             Pb_btn_New.Name = "Pb_btn_New";
             Pb_btn_New.Size = new Size(35, 32);
             Pb_btn_New.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -140,7 +140,7 @@
             Pb_btn_Edit.Cursor = Cursors.Hand;
             Pb_btn_Edit.Image = (Image)resources.GetObject("Pb_btn_Edit.Image");
             Pb_btn_Edit.InitialImage = Properties.Resources.Img_Btn_New;
-            Pb_btn_Edit.Location = new Point(993, 86);
+            Pb_btn_Edit.Location = new Point(904, 49);
             Pb_btn_Edit.Name = "Pb_btn_Edit";
             Pb_btn_Edit.Size = new Size(35, 32);
             Pb_btn_Edit.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -156,7 +156,7 @@
             Pb_btn_Delete.Cursor = Cursors.Hand;
             Pb_btn_Delete.Image = Properties.Resources.Img_Btn_Delete;
             Pb_btn_Delete.InitialImage = Properties.Resources.Img_Btn_New;
-            Pb_btn_Delete.Location = new Point(993, 121);
+            Pb_btn_Delete.Location = new Point(904, 84);
             Pb_btn_Delete.Name = "Pb_btn_Delete";
             Pb_btn_Delete.Size = new Size(35, 30);
             Pb_btn_Delete.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -167,34 +167,17 @@
             Pb_btn_Delete.MouseEnter += Pb_btn_Delete_MouseEnter;
             Pb_btn_Delete.MouseLeave += Pb_btn_Delete_MouseLeave;
             // 
-            // Tbl_layaut_Box
-            // 
-            Tbl_layaut_Box.ColumnCount = 1;
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tbl_layaut_Box.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            Tbl_layaut_Box.Location = new Point(0, 0);
-            Tbl_layaut_Box.Name = "Tbl_layaut_Box";
-            Tbl_layaut_Box.RowCount = 2;
-            Tbl_layaut_Box.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            Tbl_layaut_Box.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            Tbl_layaut_Box.Size = new Size(950, 377);
-            Tbl_layaut_Box.TabIndex = 0;
-            // 
             // Pn_bgTablaEmployees
             // 
             Pn_bgTablaEmployees.BackColor = Color.FromArgb(237, 230, 219);
             Pn_bgTablaEmployees.BackgroundImageLayout = ImageLayout.None;
-            Pn_bgTablaEmployees.Controls.Add(Tbl_layaut_Box);
-            Pn_bgTablaEmployees.Location = new Point(37, 49);
+            Pn_bgTablaEmployees.Controls.Add(Pb_btn_Delete);
+            Pn_bgTablaEmployees.Controls.Add(Pb_btn_New);
+            Pn_bgTablaEmployees.Controls.Add(Pb_btn_Edit);
+            Pn_bgTablaEmployees.Controls.Add(Pb_btn_NewTxt);
+            Pn_bgTablaEmployees.Controls.Add(Pb_btn_DeleteTxt);
+            Pn_bgTablaEmployees.Controls.Add(Pb_btn_EditTxt);
+            Pn_bgTablaEmployees.Location = new Point(37, 113);
             Pn_bgTablaEmployees.Name = "Pn_bgTablaEmployees";
             Pn_bgTablaEmployees.Size = new Size(950, 374);
             Pn_bgTablaEmployees.TabIndex = 1;
@@ -202,9 +185,9 @@
             // Pb_SearchBar
             // 
             Pb_SearchBar.Image = (Image)resources.GetObject("Pb_SearchBar.Image");
-            Pb_SearchBar.Location = new Point(446, 13);
+            Pb_SearchBar.Location = new Point(405, 33);
             Pb_SearchBar.Name = "Pb_SearchBar";
-            Pb_SearchBar.Size = new Size(505, 30);
+            Pb_SearchBar.Size = new Size(384, 30);
             Pb_SearchBar.SizeMode = PictureBoxSizeMode.StretchImage;
             Pb_SearchBar.TabIndex = 10;
             Pb_SearchBar.TabStop = false;
@@ -214,7 +197,7 @@
             Pb_Shape.BackColor = Color.FromArgb(237, 230, 219);
             Pb_Shape.Cursor = Cursors.Hand;
             Pb_Shape.Image = (Image)resources.GetObject("Pb_Shape.Image");
-            Pb_Shape.Location = new Point(454, 16);
+            Pb_Shape.Location = new Point(413, 36);
             Pb_Shape.Name = "Pb_Shape";
             Pb_Shape.Size = new Size(24, 24);
             Pb_Shape.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -225,38 +208,42 @@
             // 
             Txtbox_SearchBar.BackColor = Color.FromArgb(237, 230, 219);
             Txtbox_SearchBar.BorderStyle = BorderStyle.None;
-            Txtbox_SearchBar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Txtbox_SearchBar.Font = new Font("Arial Narrow", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
             Txtbox_SearchBar.ForeColor = Color.FromArgb(26, 60, 64);
-            Txtbox_SearchBar.Location = new Point(484, 22);
+            Txtbox_SearchBar.Location = new Point(443, 39);
             Txtbox_SearchBar.Name = "Txtbox_SearchBar";
-            Txtbox_SearchBar.Size = new Size(455, 15);
+            Txtbox_SearchBar.Size = new Size(335, 17);
             Txtbox_SearchBar.TabIndex = 12;
             Txtbox_SearchBar.Tag = "";
             Txtbox_SearchBar.Text = "Buscar";
             Txtbox_SearchBar.Enter += Txtbox_SearchBar_Enter;
             Txtbox_SearchBar.Leave += Txtbox_SearchBar_Leave;
             // 
-            // EmployeesForm
+            // cb_SearchFilter
+            // 
+            cb_SearchFilter.Font = new Font("Segoe UI", 10.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cb_SearchFilter.FormattingEnabled = true;
+            cb_SearchFilter.Location = new Point(832, 35);
+            cb_SearchFilter.Name = "cb_SearchFilter";
+            cb_SearchFilter.Size = new Size(177, 27);
+            cb_SearchFilter.TabIndex = 13;
+            // 
+            // EmployeeView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(29, 92, 99);
-            ClientSize = new Size(1035, 450);
+            ClientSize = new Size(1083, 552);
+            Controls.Add(cb_SearchFilter);
             Controls.Add(Txtbox_SearchBar);
             Controls.Add(Pb_Shape);
             Controls.Add(Pb_SearchBar);
-            Controls.Add(Pb_btn_Delete);
-            Controls.Add(Pb_btn_Edit);
-            Controls.Add(Pb_btn_New);
-            Controls.Add(Pb_btn_EditTxt);
-            Controls.Add(Pb_btn_DeleteTxt);
-            Controls.Add(Pb_btn_NewTxt);
             Controls.Add(Pb_btnCloseEmployees);
             Controls.Add(Pn_bgTablaEmployees);
             Controls.Add(Pb_txtEmployees);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "EmployeesForm";
+            Name = "EmployeeView";
             Paint += EmployeesForm_Paint;
             ((System.ComponentModel.ISupportInitialize)Pb_txtEmployees).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb_btnCloseEmployees).EndInit();
@@ -283,10 +270,10 @@
         private PictureBox Pb_btn_New;
         private PictureBox Pb_btn_Edit;
         private PictureBox Pb_btn_Delete;
-        private TableLayoutPanel Tbl_layaut_Box;
         private Panel Pn_bgTablaEmployees;
         private PictureBox Pb_SearchBar;
         private PictureBox Pb_Shape;
         private TextBox Txtbox_SearchBar;
+        private ComboBox cb_SearchFilter;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace H_Resource.Models;
 
-public partial class Gender
+public partial class GenderModel
 {
     public int Id { get; set; }
 

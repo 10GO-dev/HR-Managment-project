@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace H_Resource.Models;
 
-public partial class Payroll
+public partial class PayrollModel
 {
     public int PayrollId { get; set; }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace H_Resource.Models;
 
-public partial class Country
+public partial class CountryModel
 {
     public int Id { get; set; }
 
