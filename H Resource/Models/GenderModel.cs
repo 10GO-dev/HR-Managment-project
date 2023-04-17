@@ -9,5 +9,5 @@ public partial class GenderModel
 
     public string Name { get; set; } = null!;
 
-    public virtual EmployeeModel? Employee { get; set; }
+    public virtual ICollection<EmployeeModel> Employees { get; } = new List<EmployeeModel>();
 }

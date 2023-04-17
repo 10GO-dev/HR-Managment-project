@@ -144,7 +144,6 @@
             Pb_btn_Edit.BackColor = Color.FromArgb(29, 92, 99);
             Pb_btn_Edit.Cursor = Cursors.Hand;
             Pb_btn_Edit.Image = (Image)resources.GetObject("Pb_btn_Edit.Image");
-            Pb_btn_Edit.InitialImage = Properties.Resources.Img_Btn_New;
             Pb_btn_Edit.Location = new Point(993, 51);
             Pb_btn_Edit.Name = "Pb_btn_Edit";
             Pb_btn_Edit.Size = new Size(35, 32);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,82 +15,73 @@ using System.Windows.Forms;
 
 namespace H_Resource.Views
 {
-    public partial class EmployeeView : Form
+    public partial class EmployeeView : Form, IEmployeeView
     {
-        public EmployeeView()
+        private string message;
+        private static bool isCached;
+        public string SearchValue { get => txt_SearchEmployee.Text; set => txt_SearchEmployee.Text = value; }
+        public string? SearchCriteria => cb_SearchFilter.SelectedItem.ToString();
+
+        public string Message { get => message; set => message = value; }
+        public bool IsCached { get => isCached; set => isCached = value; }
+
+        private static EmployeeView? instance;
+
+        //Constructor
+        private EmployeeView()
         {
             InitializeComponent();
-        }
-        //Drag Form
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr intPtr, int msg, int wParam, int lParam);
+            AssociateAndRaiseViewEvents();
+            this.DoubleBuffered = true;
 
-        private void EmployeesForm_Paint(object sender, PaintEventArgs e)
+        }
+
+        //Singleton
+        public static EmployeeView GetInstance(Form parentContainer)
         {
-            //e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-            //int radius = 20;
-            //int diameter = radius * 2;
-            //Rectangle rect = new Rectangle(0, 0, diameter, diameter);
-            //// Esquina superior izquierda
-            //GraphicsPath path = new GraphicsPath();
-            //path.AddArc(rect, 180, 90);
-            //path.AddLine(radius, 0, this.Width - radius, 0);
-
-            //// Esquina superior derecha
-            //rect.X = this.Width - diameter;
-            //path.AddArc(rect, 270, 90);
-            //path.AddLine(this.Width, radius, this.Width, this.Height - radius);
-
-            //// Esquina inferior derecha
-            //rect.Y = this.Height - diameter;
-            //path.AddArc(rect, 0, 90);
-            //path.AddLine(this.Width - radius, this.Height, radius, this.Height);
-
-            //// Esquina inferior izquierda
-            //rect.X = 0;
-            //path.AddArc(rect, 90, 90);
-            //path.AddLine(0, this.Height - radius, 0, radius);
-
-            //path.CloseFigure();
-            //this.Region = new Region(path);
+            if (instance == null || instance.IsDisposed)
+                instance = new EmployeeView();
+            instance.TopLevel = false;
+            instance.MdiParent = parentContainer;
+            instance.Dock = DockStyle.Fill;
+            return instance;
         }
 
-        private void Pb_btnCloseEmployees_MouseEnter(object sender, EventArgs e)
+        private void AssociateAndRaiseViewEvents()
         {
-            Pb_btnCloseEmployees.Image = Properties.Resources.img_close_button_hover;
+            //Search Event
+            txt_SearchEmployee.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    SearchEvent?.Invoke(this, EventArgs.Empty);
+                }
+            };
+            //Go Home Event
+            btnBackHome.Click += delegate { ShowHomeView?.Invoke(this, EventArgs.Empty); };
+            //Add New Employee event
+            Pb_btn_New.Click += delegate { AddNewEvent?.Invoke(this, EventArgs.Empty); };
+            //Edit Employee event
+            Pb_btn_Edit.Click += delegate { EditEvent?.Invoke(this, EventArgs.Empty); };
+            //Delete Employee Event
+            Pb_btn_Delete.Click += delegate
+            {
+                DeleteEvent?.Invoke(this, EventArgs.Empty);
+            };
         }
 
-        private void Pb_btnCloseEmployees_MouseLeave(object sender, EventArgs e)
-        {
-            Pb_btnCloseEmployees.Image = Properties.Resources.img_close_button;
-        }
+        public event EventHandler? SearchEvent;
+        public event EventHandler? AddNewEvent;
+        public event EventHandler? DeleteEvent;
+        public event EventHandler? SaveEvent;
+        public event EventHandler? CancelEvent;
+        public event EventHandler<EventArgs>? ShowHomeView;
+        public event EventHandler<EventArgs>? ShowAddOrEditView;
+        public event EventHandler? EditEvent;
+        public event EventHandler OnEmployeeDeleted;
+        public event EventHandler OnEmployeeAdded;
+        public event EventHandler OnEmployeeUpdated;
 
-        private void Pb_btn_Delete_Paint(object sender, PaintEventArgs e)
-        {
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(0, 0, Pb_btn_Delete.Width - 1, Pb_btn_Delete.Height - 1);
-            Region rg = new Region(gp);
-            Pb_btn_Delete.Region = rg;
-        }
-
-        private void Pb_btn_Edit_Paint(object sender, PaintEventArgs e)
-        {
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(0, 0, Pb_btn_Edit.Width - 1, Pb_btn_Edit.Height - 1);
-            Region rg = new Region(gp);
-            Pb_btn_Edit.Region = rg;
-        }
-
-        private void Pb_btn_New_Paint(object sender, PaintEventArgs e)
-        {
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(0, 0, Pb_btn_New.Width - 1, Pb_btn_New.Height - 1);
-            Region rg = new Region(gp);
-            Pb_btn_New.Region = rg;
-        }
 
         private void Pb_btn_Delete_MouseEnter(object sender, EventArgs e)
         {
@@ -122,28 +115,78 @@ namespace H_Resource.Views
 
         private void Txtbox_SearchBar_Enter(object sender, EventArgs e)
         {
-            if (Txtbox_SearchBar.Text == "Buscar")
+            if (txt_SearchEmployee.Text == "Buscar")
             {
-                Txtbox_SearchBar.Text = "";
+                txt_SearchEmployee.Text = "";
 
             }
         }
 
         private void Txtbox_SearchBar_Leave(object sender, EventArgs e)
         {
-            if (Txtbox_SearchBar.Text == "")
+            if (txt_SearchEmployee.Text == "")
             {
-                Txtbox_SearchBar.Text = "Buscar";
+                txt_SearchEmployee.Text = "Buscar";
 
             }
         }
 
-        private void Pb_btn_Delete_Click(object sender, EventArgs e)
+
+        private void Dgv_EmployeeList_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            int radius = 14;
+            int diameter = radius * 2;
+            Rectangle rect = new Rectangle(0, 0, diameter, diameter);
+            // Esquina superior izquierda
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(rect, 180, 90);
+            path.AddLine(radius, 0, Dgv_EmployeeList.Width - radius, 0);
+
+            // Esquina superior derecha
+            rect.X = Dgv_EmployeeList.Width - diameter;
+            path.AddArc(rect, 270, 90);
+            path.AddLine(Dgv_EmployeeList.Width, radius, Dgv_EmployeeList.Width, Dgv_EmployeeList.Height - radius);
+
+            // Esquina inferior derecha
+            rect.Y = Dgv_EmployeeList.Height - diameter;
+            path.AddArc(rect, 0, 90);
+            path.AddLine(Dgv_EmployeeList.Width - radius, Dgv_EmployeeList.Height, radius, Dgv_EmployeeList.Height);
+
+            // Esquina inferior izquierda
+            rect.X = 0;
+            path.AddArc(rect, 90, 90);
+            path.AddLine(0, Dgv_EmployeeList.Height - radius, 0, radius);
+
+            path.CloseFigure();
+            Dgv_EmployeeList.Region = new Region(path);
+        }
+
+        private void EmployeeView_Load(object sender, EventArgs e)
+        {
+            cb_SearchFilter.SelectedIndex = 0;
+        }
+
+        public void SetEmployeeListBindingSource(BindingSource employeeList)
+        {
+            Dgv_EmployeeList.DataSource = employeeList;
+        }
+
+        private void cb_SearchFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void Pb_btnCloseEmployees_Click(object sender, EventArgs e)
+        private void txt_SearchEmployee_Leave(object sender, EventArgs e)
+        {
+            if (txt_SearchEmployee.Text.Length == 0 || string.IsNullOrWhiteSpace(txt_SearchEmployee.Text))
+            {
+                txt_SearchEmployee.Text = "Buscar";
+            }
+        }
+
+        private void Dgv_EmployeeList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

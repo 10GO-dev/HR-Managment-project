@@ -193,29 +193,9 @@ namespace H_Resource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Img_Backgroundtxt_Btn_Delete {
+        internal static System.Drawing.Bitmap img_btn_AddEmployeeIco {
             get {
-                object obj = ResourceManager.GetObject("Img_Backgroundtxt_Btn_Delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Img_Backgroundtxt_Btn_Edit {
-            get {
-                object obj = ResourceManager.GetObject("Img_Backgroundtxt_Btn_Edit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Img_Backgroundtxt_Btn_New {
-            get {
-                object obj = ResourceManager.GetObject("Img_Backgroundtxt_Btn_New", resourceCulture);
+                object obj = ResourceManager.GetObject("img_btn_AddEmployeeIco", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +223,9 @@ namespace H_Resource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Img_Btn_Delete {
+        internal static System.Drawing.Bitmap img_btn_delEmployeeLb {
             get {
-                object obj = ResourceManager.GetObject("Img_Btn_Delete", resourceCulture);
+                object obj = ResourceManager.GetObject("img_btn_delEmployeeLb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +233,9 @@ namespace H_Resource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Img_Btn_Edit {
+        internal static System.Drawing.Bitmap img_btn_delEmployeIco {
             get {
-                object obj = ResourceManager.GetObject("Img_Btn_Edit", resourceCulture);
+                object obj = ResourceManager.GetObject("img_btn_delEmployeIco", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +243,29 @@ namespace H_Resource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Img_Btn_New {
+        internal static System.Drawing.Bitmap img_btn_editEmployeeIco {
             get {
-                object obj = ResourceManager.GetObject("Img_Btn_New", resourceCulture);
+                object obj = ResourceManager.GetObject("img_btn_editEmployeeIco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_btn_editEmployeeLb {
+            get {
+                object obj = ResourceManager.GetObject("img_btn_editEmployeeLb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_btn_newEmployeeLb {
+            get {
+                object obj = ResourceManager.GetObject("img_btn_newEmployeeLb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +326,16 @@ namespace H_Resource.Properties {
         internal static System.Drawing.Bitmap img_close_button_hover {
             get {
                 object obj = ResourceManager.GetObject("img_close_button_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_filterIco {
+            get {
+                object obj = ResourceManager.GetObject("img_filterIco", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -406,6 +416,16 @@ namespace H_Resource.Properties {
         internal static System.Drawing.Bitmap img_minimize_button_hover {
             get {
                 object obj = ResourceManager.GetObject("img_minimize_button_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_txt_EmployeeFilter {
+            get {
+                object obj = ResourceManager.GetObject("img_txt_EmployeeFilter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

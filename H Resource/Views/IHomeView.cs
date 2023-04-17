@@ -8,6 +8,9 @@ namespace H_Resource.Views
 {
     public interface IHomeView
     {
+        event EventHandler<EventArgs> ShowEmployeesView;
         void Show();
+        void Close();
+
     }
 }

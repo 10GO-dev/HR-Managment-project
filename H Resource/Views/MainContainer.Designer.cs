@@ -120,14 +120,15 @@
             // 
             // MainContainer
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1083, 594);
             Controls.Add(pn_Desktop);
             Controls.Add(pn_TitleBar);
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             Name = "MainContainer";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "HResource";
             Load += MainContainer_Load;
             Resize += MainContainer_Resize;

@@ -131,7 +131,6 @@
             pb_btnEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_btnEmployee.TabIndex = 0;
             pb_btnEmployee.TabStop = false;
-            pb_btnEmployee.Click += pb_btnEmployee_Click;
             pb_btnEmployee.MouseEnter += pb_btnEmployee_MouseEnter;
             pb_btnEmployee.MouseLeave += pb_btnEmployee_MouseLeave;
             // 
@@ -176,8 +175,8 @@
             // 
             // HomeView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(26, 60, 64);
             ClientSize = new Size(945, 489);
             Controls.Add(pn_base);

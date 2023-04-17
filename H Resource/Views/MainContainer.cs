@@ -26,12 +26,15 @@ namespace H_Resource.Views
         public event EventHandler<EventArgs> ShowHomeView;
         public event EventHandler<EventArgs> ShowEmployeesView;
 
+
         //Constructor
         private MainContainer()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
             this.Padding = new Padding(borderSize); //Border Size
             this.BackColor = Color.FromArgb(29, 92, 99);//Border Color
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
         public static MainContainer GetInstance()
         {
@@ -236,6 +239,7 @@ namespace H_Resource.Views
 
         public void AddView(Form view)
         {
+            view.Size = pn_Desktop.Size;
             pn_Desktop.Controls.Clear();
             pn_Desktop.Controls.Add(view);
         }

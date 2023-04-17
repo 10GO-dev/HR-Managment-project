@@ -17,9 +17,14 @@ namespace H_Resource.Views
     public partial class HomeView : Form, IHomeView
     {
         private static HomeView? instance;
+
+        public event EventHandler<EventArgs> ShowEmployeesView;
+
         private HomeView()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            pb_btnEmployee.Click += delegate { ShowEmployeesView?.Invoke(this, EventArgs.Empty); };
         }
 
         public static HomeView GetInstance(Form parentContainer)
@@ -153,15 +158,6 @@ namespace H_Resource.Views
             VacationView vacationForm = new VacationView();
             this.Hide();
             vacationForm.Show();
-        }
-
-        private void pb_btnEmployee_Click(object sender, EventArgs e)
-        {
-            hideAboutPage();
-            EmployeeView employeesForm = new EmployeeView();
-            this.Hide();
-            employeesForm.Show();
-
         }
 
         private void hideAboutPage()

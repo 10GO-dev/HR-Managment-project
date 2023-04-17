@@ -1,6 +1,9 @@
 
+using H_Resource._Repositories;
 using H_Resource.Presenters;
 using H_Resource.Views;
+using H_Resource.Models;
+using System.Configuration;
 
 namespace H_Resource
 {
@@ -16,7 +19,7 @@ namespace H_Resource
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             IMainContainer view = MainContainer.GetInstance();
-            new MainContainerPresenter(view);
+            _ = new MainContainerPresenter(view);
             Application.Run((Form)view);
         }
     }

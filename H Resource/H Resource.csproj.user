@@ -22,7 +22,7 @@
     <Compile Update="Views\MainContainer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\AddEmployeeView.cs">
+    <Compile Update="Views\AddOrEditEmployeeView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\PayrollView.cs">

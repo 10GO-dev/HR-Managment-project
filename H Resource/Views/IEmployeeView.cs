@@ -9,33 +9,34 @@ using System.Threading.Tasks;
 
 namespace H_Resource.Views
 {
-    internal interface IEmployeeView
+    public interface IEmployeeView
     {
         //Propoerties - Fields
-        public int EmployeeId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime? BirthDate { get; set; }
-        public int? GenderId { get; set; }
-        public string? MaritalStatus { get; set; }
-        public string? Address { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public byte[]? Image { get; set; }
-        public DateTime? HireDate { get; set; }
-        public int? DepartmentId { get; set; }
-        public int? CountryId { get; set; }
+
+        string Message { get; set; }
+        public string SearchValue { get; set; }
+        public string? SearchCriteria { get; }
+        public bool IsCached { get; set; }
+       
 
         //Events
         event EventHandler SearchEvent;
         event EventHandler AddNewEvent;
-        event EventHandler UpdateEvent;
+        event EventHandler EditEvent;
         event EventHandler DeleteEvent;
-        event EventHandler SaveEvent;
         event EventHandler CancelEvent;
+
+        event EventHandler OnEmployeeDeleted;
+        event EventHandler OnEmployeeAdded;
+        event EventHandler OnEmployeeUpdated;
+
+        event EventHandler<EventArgs> ShowHomeView;
+        event EventHandler<EventArgs> ShowAddOrEditView;
 
         //Methods
         void SetEmployeeListBindingSource(BindingSource employeeList);
         void Show();//Opcional
+        void Close();
+        void Hide();
     }
 }
