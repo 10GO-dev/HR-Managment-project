@@ -34,12 +34,7 @@ D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-projec
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.genruntimeconfig.cache
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\ref\H Resource.dll
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.HomeScreenForm.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.HomeScreenForm.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.LoginForm.resources
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.AboutControl.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EmployeesForm.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.PayrollForm.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.VacationForm.resources
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\Azure.Core.dll
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\Azure.Identity.dll
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\Humanizer.dll
@@ -85,9 +80,6 @@ D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debu
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.csproj.CopyComplete
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.Btn_Delete_EmployeesControl.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.NewEmployeeForm.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EditEmployeeForm.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EditVacationForm.resources
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.exe
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.dll.config
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.deps.json
@@ -164,3 +156,16 @@ D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\r
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.pdb
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.genruntimeconfig.cache
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\ref\H Resource.dll
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.dll.config
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.AddOrEditEmployeeView.resources
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EditVacationView.resources
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EmployeeView.resources
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.HomeView.resources
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.LoginView.resources
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.MainContainer.resources
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.PayrollView.resources
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.VacationView.resources

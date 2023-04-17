@@ -18,46 +18,7 @@ namespace H_Resource.Views
             InitializeComponent();
         }
 
-        private void VacationForm_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-            int radius = 20;
-            int diameter = radius * 2;
-            Rectangle rect = new Rectangle(0, 0, diameter, diameter);
-            // Esquina superior izquierda
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(rect, 180, 90);
-            path.AddLine(radius, 0, this.Width - radius, 0);
-
-            // Esquina superior derecha
-            rect.X = this.Width - diameter;
-            path.AddArc(rect, 270, 90);
-            path.AddLine(this.Width, radius, this.Width, this.Height - radius);
-
-            // Esquina inferior derecha
-            rect.Y = this.Height - diameter;
-            path.AddArc(rect, 0, 90);
-            path.AddLine(this.Width - radius, this.Height, radius, this.Height);
-
-            // Esquina inferior izquierda
-            rect.X = 0;
-            path.AddArc(rect, 90, 90);
-            path.AddLine(0, this.Height - radius, 0, radius);
-
-            path.CloseFigure();
-            this.Region = new Region(path);
-        }
-
-        private void Pb_btnCloseVacation_MouseEnter(object sender, EventArgs e)
-        {
-            Pb_btnCloseVacation.Image = Properties.Resources.img_close_button_hover;
-        }
-
-        private void Pb_btnCloseVacation_MouseLeave(object sender, EventArgs e)
-        {
-            Pb_btnCloseVacation.Image = Properties.Resources.img_close_button;
-        }
 
         private void Txtbox_SearchBar_Enter(object sender, EventArgs e)
         {
@@ -77,14 +38,6 @@ namespace H_Resource.Views
             }
         }
 
-        private void Pb_btn_Edit_Paint(object sender, PaintEventArgs e)
-        {
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(0, 0, Pb_btn_Edit.Width - 1, Pb_btn_Edit.Height - 1);
-            Region rg = new Region(gp);
-            Pb_btn_Edit.Region = rg;
-        }
-
         private void Pb_btn_Edit_MouseEnter(object sender, EventArgs e)
         {
             Pb_btn_EditTxt.Visible = Pb_btn_EditTxt.Visible ? false : true;
@@ -93,7 +46,37 @@ namespace H_Resource.Views
         private void Pb_btn_Edit_MouseLeave(object sender, EventArgs e)
         {
             Pb_btn_EditTxt.Visible = Pb_btn_EditTxt.Visible ? false : false;
-        }      
-        
+        }
+
+        private void Dgv_VacationList_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            int radius = 14;
+            int diameter = radius * 2;
+            Rectangle rect = new Rectangle(0, 0, diameter, diameter);
+            // Esquina superior izquierda
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(rect, 180, 90);
+            path.AddLine(radius, 0, Dgv_VacationList.Width - radius, 0);
+
+            // Esquina superior derecha
+            rect.X = Dgv_VacationList.Width - diameter;
+            path.AddArc(rect, 270, 90);
+            path.AddLine(Dgv_VacationList.Width, radius, Dgv_VacationList.Width, Dgv_VacationList.Height - radius);
+
+            // Esquina inferior derecha
+            rect.Y = Dgv_VacationList.Height - diameter;
+            path.AddArc(rect, 0, 90);
+            path.AddLine(Dgv_VacationList.Width - radius, Dgv_VacationList.Height, radius, Dgv_VacationList.Height);
+
+            // Esquina inferior izquierda
+            rect.X = 0;
+            path.AddArc(rect, 90, 90);
+            path.AddLine(0, Dgv_VacationList.Height - radius, 0, radius);
+
+            path.CloseFigure();
+            Dgv_VacationList.Region = new Region(path);
+        }
     }
 }

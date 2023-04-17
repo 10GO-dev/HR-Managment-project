@@ -18,47 +18,6 @@ namespace H_Resource.Views
             InitializeComponent();
         }
 
-        private void PayrollForm_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-            int radius = 20;
-            int diameter = radius * 2;
-            Rectangle rect = new Rectangle(0, 0, diameter, diameter);
-            // Esquina superior izquierda
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(rect, 180, 90);
-            path.AddLine(radius, 0, this.Width - radius, 0);
-
-            // Esquina superior derecha
-            rect.X = this.Width - diameter;
-            path.AddArc(rect, 270, 90);
-            path.AddLine(this.Width, radius, this.Width, this.Height - radius);
-
-            // Esquina inferior derecha
-            rect.Y = this.Height - diameter;
-            path.AddArc(rect, 0, 90);
-            path.AddLine(this.Width - radius, this.Height, radius, this.Height);
-
-            // Esquina inferior izquierda
-            rect.X = 0;
-            path.AddArc(rect, 90, 90);
-            path.AddLine(0, this.Height - radius, 0, radius);
-
-            path.CloseFigure();
-            this.Region = new Region(path);
-        }
-
-        private void Pb_btnClosePayroll_MouseEnter(object sender, EventArgs e)
-        {
-            Pb_btnClosePayroll.Image = Properties.Resources.img_close_button_hover;
-        }
-
-        private void Pb_btnClosePayroll_MouseLeave(object sender, EventArgs e)
-        {
-            Pb_btnClosePayroll.Image = Properties.Resources.img_close_button;
-        }
-
         private void Txtbox_SearchBar_Enter(object sender, EventArgs e)
         {
             if (Txtbox_SearchBar.Text == "Buscar")
@@ -75,6 +34,37 @@ namespace H_Resource.Views
                 Txtbox_SearchBar.Text = "Buscar";
 
             }
+        }
+
+        private void Dgv_PayrollList_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            int radius = 14;
+            int diameter = radius * 2;
+            Rectangle rect = new Rectangle(0, 0, diameter, diameter);
+            // Esquina superior izquierda
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(rect, 180, 90);
+            path.AddLine(radius, 0, Dgv_PayrollList.Width - radius, 0);
+
+            // Esquina superior derecha
+            rect.X = Dgv_PayrollList.Width - diameter;
+            path.AddArc(rect, 270, 90);
+            path.AddLine(Dgv_PayrollList.Width, radius, Dgv_PayrollList.Width, Dgv_PayrollList.Height - radius);
+
+            // Esquina inferior derecha
+            rect.Y = Dgv_PayrollList.Height - diameter;
+            path.AddArc(rect, 0, 90);
+            path.AddLine(Dgv_PayrollList.Width - radius, Dgv_PayrollList.Height, radius, Dgv_PayrollList.Height);
+
+            // Esquina inferior izquierda
+            rect.X = 0;
+            path.AddArc(rect, 90, 90);
+            path.AddLine(0, Dgv_PayrollList.Height - radius, 0, radius);
+
+            path.CloseFigure();
+            Dgv_PayrollList.Region = new Region(path);
         }
     }
 }
