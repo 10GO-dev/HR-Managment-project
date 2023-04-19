@@ -80,13 +80,10 @@ D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debu
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H Resource.csproj.CopyComplete
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.Btn_Delete_EmployeesControl.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\H Resource.dll.config
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\System.Drawing.Common.dll
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.AddOrEditEmployeeView.resources
-D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EditVacationView.resources
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EmployeeView.resources
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.HomeView.resources
 D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.LoginView.resources
@@ -169,3 +166,5 @@ D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\ref\H Resource.dll
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\Dapper.dll
 D:\Programing\C#\ITLA\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EmployeeDetailView.resources
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\bin\Debug\net6.0-windows\Dapper.dll
+D:\programas\vs22pg\proyectofinalingsof\HR-Managment-project\H Resource\obj\Debug\net6.0-windows\H_Resource.Views.EmployeeDetailView.resources
