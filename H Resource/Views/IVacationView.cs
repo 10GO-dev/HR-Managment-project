@@ -9,6 +9,7 @@ namespace H_Resource.Views
     public interface IVacationView
     {
         //Properties - Fields
+        public int EmployeeID { get; set; }
         public string FullName { get; set; }
         public string Department { get; set; }
         public string DocumentId { get; set; }
@@ -16,6 +17,7 @@ namespace H_Resource.Views
         public string AvailableDays { get; set; }
         public string? TakenDays { get; set; }
         public Image? Image { get; set; }
+
 
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
@@ -26,6 +28,8 @@ namespace H_Resource.Views
         public string SearchValueType { get; set;}
         public bool IsCached { get; set; }
 
+        public int SelectedEmployeeIndex { get;}
+
         //Events
         event EventHandler SearchEvent;
         event EventHandler AddEvent;
@@ -35,6 +39,7 @@ namespace H_Resource.Views
         event EventHandler<EventArgs> ShowHomeView;
         void Show();
         void Close();
+        void ResetTabVacationEdit();
 
         void SetVacationListBindingSource(BindingSource vacationList);
         void SetEmployeeDetailBindingSource(BindingSource employeeDetail);

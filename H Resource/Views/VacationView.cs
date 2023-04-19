@@ -16,6 +16,7 @@ namespace H_Resource.Views
     {
 
         private bool isCached;
+        private int employeeId = 0;
         public string SearchValue { get => Txtbox_SearchBar.Text; set => Txtbox_SearchBar.Text = value; }
         public string SearchType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string SearchValueType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -27,15 +28,18 @@ namespace H_Resource.Views
         public DateTime? HireDate { get => dtp_eHireDate.Value; set => dtp_eHireDate.Value = (DateTime)value; }
         public string AvailableDays { get => eAvailableDays.Text; set => eAvailableDays.Text = value; }
         public string TakenDays { get => eTakenDays.Text; set => eTakenDays.Text = value; }
-        public DateTime StartDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime EndDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime StartDate { get => Dtp_Startdate.Value; set => Dtp_Enddate.Value = (DateTime)value; }
+        public DateTime EndDate { get => Dtp_Enddate.Value; set => Dtp_Enddate.Value = (DateTime)value; }
         public Image? Image
         {
             get => Tools.CompareImages((Bitmap)Pb_imgPerfil.Image, Properties.Resources.Img_Avatar) ? null : Pb_imgPerfil.Image;
             set => Pb_imgPerfil.Image = value ?? Properties.Resources.Img_Avatar;
         }
+        public int SelectedEmployeeIndex { get => selectedEmployeeIndex; }
+        public int EmployeeID { get => employeeId; set => employeeId = value; }
 
         private static VacationView? instance;
+        private int selectedEmployeeIndex;
 
         private VacationView()
         {
@@ -47,7 +51,19 @@ namespace H_Resource.Views
         private void AssociateAndRaiseViewEvents()
         {
             //Volver a Inicio
-            btnBackHome.Click += delegate { ShowHomeView?.Invoke(this, EventArgs.Empty); };
+            btnBackHome.Click += (s, e) =>
+            {
+                if (tabControlVacationView.TabPages.Contains(tabPageAddOrEdit))
+                {
+                    tabControlVacationView.TabPages.Remove(tabPageAddOrEdit);
+                    tabControlVacationView.TabPages.Add(tabPageVacationList);
+                    ResetTabVacationEdit();
+                }
+                else
+                {
+                    ShowHomeView?.Invoke(this, EventArgs.Empty);
+                }
+            };
             //Search Event
             Txtbox_SearchBar.KeyDown += (s, e) =>
             {
@@ -75,7 +91,11 @@ namespace H_Resource.Views
                 tabPageAddOrEdit.Text = "Editar Vacaciones";
             };
             //selectEmploye Event
-            dgv_EmployeeList.CellContentClick += delegate { SelectEmployeeClick?.Invoke(this, EventArgs.Empty); };
+            dgv_EmployeeList.CellClick += (s, e) =>
+            {
+                selectedEmployeeIndex = e.RowIndex;
+                SelectEmployeeClick?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         public static VacationView GetInstance(Form parentContainer)
@@ -162,7 +182,89 @@ namespace H_Resource.Views
 
         public void SetEmployeeDetailBindingSource(BindingSource employeeDetail)
         {
+            dgv_EmployeeList.DataSource = null;
             dgv_EmployeeList.DataSource = employeeDetail;
+        }
+
+        private void btnLoadSelectedEmployee_Click(object sender, EventArgs e)
+        {
+            if (employeeId != 0)
+            {
+                pn_employeeSelect.Visible = false;
+                return;
+            }
+            MessageBox.Show("Debes seleccionar un empleado para añadir una vacación");
+        }
+
+        private void btnOpenEmployeeSelector_Click(object sender, EventArgs e)
+        {
+            pn_employeeSelect.Visible = true;
+        }
+
+        private void btnCloseEmployeeSelector_Click(object sender, EventArgs e)
+        {
+            if (employeeId != 0)
+            {
+                pn_employeeSelect.Visible = false;
+            }
+            else
+            {
+                tabControlVacationView.TabPages.Remove(tabPageAddOrEdit);
+                tabControlVacationView.TabPages.Add(tabPageVacationList);
+                ResetTabVacationEdit();
+                Txtbox_SearchBar.Focus();
+            }
+
+        }
+
+        private void dgv_EmployeeList_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (dgv_EmployeeList.DataSource != null)
+            {
+                txtSelectEmployeeSearch.Enabled = true;
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            tabControlVacationView.TabPages.Remove(tabPageAddOrEdit);
+            tabControlVacationView.TabPages.Add(tabPageVacationList);
+            ResetTabVacationEdit();
+            Txtbox_SearchBar.Focus();
+        }
+        public void ResetTabVacationEdit()
+        {
+            employeeId = 0;
+            txtName.Text = "";
+            txtDepartment.Text = "";
+            eDocumentID.Text = "";
+            eAvailableDays.Text = "";
+            dtp_eHireDate.Value = DateTime.Today;
+            Dtp_Startdate.Value = DateTime.Today;
+            Dtp_Enddate.Value = DateTime.Today.AddDays(1);
+            eTakenDays.Text = "";
+            Pb_imgPerfil.Image = Properties.Resources.Img_Avatar;
+        }
+
+        private void Dtp_Startdate_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = Dtp_Startdate.Value.Date;
+            DateTime currentDate = DateTime.Today;
+
+            if (DateTime.Compare(selectedDate, currentDate) < 0)
+            {
+                MessageBox.Show("La fecha seleccionada debe ser mayor o igual a la fecha actual.");
+                Dtp_Startdate.Value = currentDate;
+            }
+        }
+
+        private void Dtp_Enddate_ValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(Dtp_Startdate.Value, Dtp_Enddate.Value) < 1)
+            {
+                MessageBox.Show("La fecha fin debe ser mayor que la fecha de inicio");
+                Dtp_Enddate.Value = DateTime.Today.AddDays(1);
+            }
         }
     }
 }

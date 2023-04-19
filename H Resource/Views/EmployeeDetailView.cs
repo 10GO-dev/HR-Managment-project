@@ -23,8 +23,9 @@ namespace H_Resource.Views
         public string? Address { get => Txt_Address.Text; set => Txt_Address.Text = value; }
         public string Phone { get => Txt_Phone.Text; set => Txt_Phone.Text = value; }
         public string Email { get => Txt_Email.Text; set => Txt_Email.Text = value; }
-        public Image? Image { 
-            get => Tools.CompareImages((Bitmap)Pb_imgPerfil.Image,Properties.Resources.Img_Avatar) ? null : Pb_imgPerfil.Image;
+        public Image? Image
+        {
+            get => Tools.CompareImages((Bitmap)Pb_imgPerfil.Image, Properties.Resources.Img_Avatar) ? null : Pb_imgPerfil.Image;
             set => Pb_imgPerfil.Image = value ?? Properties.Resources.Img_Avatar;
         }
         public DateTime? HireDate { get => Dtp_Dateofhire.Value; set => Dtp_Dateofhire.Value = Convert.ToDateTime(value); }
@@ -133,7 +134,11 @@ namespace H_Resource.Views
         {
 
             Lb_Title.Left = (this.Width / 2 - Lb_Title.Width / 2);
-            pn_form.Left = (this.Width / 2 - pn_form.Width / 2);
+            if (this.Width > pn_form.MaximumSize.Width)
+            {
+                //pn_form.Anchor = (AnchorStyles)(Top | Bottom);
+                pn_form.Left = (this.Width / 2 - pn_form.Width / 2);
+            }
             pn_Avatar.Left = (pn_form.Width / 2 - pn_Avatar.Width / 2);
         }
 

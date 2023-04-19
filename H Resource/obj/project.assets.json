@@ -3542,19 +3542,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Diego\\.nuget\\packages\\": {}
+    "C:\\Users\\Odett Peralta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programing\\C#\\ITLA\\HR-Managment-project\\H Resource\\H Resource.csproj",
+      "projectUniqueName": "C:\\Users\\Odett Peralta\\source\\repos\\HR-Managment-project\\H Resource\\H Resource.csproj",
       "projectName": "H Resource",
-      "projectPath": "D:\\Programing\\C#\\ITLA\\HR-Managment-project\\H Resource\\H Resource.csproj",
-      "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-      "outputPath": "D:\\Programing\\C#\\ITLA\\HR-Managment-project\\H Resource\\obj\\",
+      "projectPath": "C:\\Users\\Odett Peralta\\source\\repos\\HR-Managment-project\\H Resource\\H Resource.csproj",
+      "packagesPath": "C:\\Users\\Odett Peralta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Odett Peralta\\source\\repos\\HR-Managment-project\\H Resource\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Odett Peralta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3632,7 +3632,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

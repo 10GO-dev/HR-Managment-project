@@ -394,15 +394,16 @@
             // pn_form
             // 
             pn_form.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pn_form.AutoScroll = true;
             pn_form.BackColor = Color.FromArgb(237, 230, 219);
             pn_form.Controls.Add(panel2);
             pn_form.Controls.Add(panel1);
             pn_form.Controls.Add(pn_Avatar);
-            pn_form.Location = new Point(35, 75);
+            pn_form.Location = new Point(6, 72);
             pn_form.MaximumSize = new Size(1360, 768);
-            pn_form.MinimumSize = new Size(835, 421);
+            pn_form.MinimumSize = new Size(875, 421);
             pn_form.Name = "pn_form";
-            pn_form.Size = new Size(1013, 421);
+            pn_form.Size = new Size(1072, 424);
             pn_form.TabIndex = 32;
             pn_form.Paint += pn_form_Paint;
             // 
@@ -450,7 +451,7 @@
             panel1.Controls.Add(Lbl_Department);
             panel1.Controls.Add(cb_Department);
             panel1.Controls.Add(Lbl_Salary);
-            panel1.Location = new Point(639, 19);
+            panel1.Location = new Point(698, 19);
             panel1.Name = "panel1";
             panel1.Size = new Size(292, 383);
             panel1.TabIndex = 34;
@@ -474,7 +475,7 @@
             pn_Avatar.Controls.Add(Lb_id);
             pn_Avatar.Controls.Add(Pb_btn_AddAvatar);
             pn_Avatar.Controls.Add(Pb_imgPerfil);
-            pn_Avatar.Location = new Point(407, 83);
+            pn_Avatar.Location = new Point(437, 83);
             pn_Avatar.Name = "pn_Avatar";
             pn_Avatar.Size = new Size(185, 196);
             pn_Avatar.TabIndex = 32;
@@ -500,10 +501,11 @@
             Lb_id.Size = new Size(0, 21);
             Lb_id.TabIndex = 6;
             // 
-            // AddOrEditEmployeeView
+            // EmployeeDetailView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.FromArgb(26, 60, 64);
             ClientSize = new Size(1083, 552);
             Controls.Add(BtnBack_EmployeeView);
@@ -512,8 +514,9 @@
             Controls.Add(pn_form);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "AddOrEditEmployeeView";
-            SizeChanged += AddOrEditEmployeeView_SizeChanged;
+            Name = "EmployeeDetailView";
+            StartPosition = FormStartPosition.CenterParent;
+            Resize += AddOrEditEmployeeView_SizeChanged;
             ((System.ComponentModel.ISupportInitialize)Pb_btnConfirmar).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnBack_EmployeeView).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb_imgPerfil).EndInit();

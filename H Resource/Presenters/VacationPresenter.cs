@@ -43,10 +43,14 @@ namespace H_Resource.Presenters
 
         private async void SelectEmployeeToEdit(object? sender, EventArgs e)
         {
-            var employee = (VacationEmployeeList)VacationBindingSource.Current;
-            if (employee != null )
+            List<EmployeeVacationViewModel>? employeeList = EmployeesBindingSource.DataSource as List<EmployeeVacationViewModel>;
+
+            EmployeeVacationViewModel selectedEmployee = employeeList[_vacationView.SelectedEmployeeIndex];
+
+            if (selectedEmployee != null && selectedEmployee.EmployeeId != _vacationView.EmployeeID)
             {
-                EmployeeModel model = employeesDetail.SingleOrDefault(e => e.EmployeeId == employee.EmployeeId)??employeeRepository.GetAsync(employee.EmployeeId);
+                EmployeeModel model = employeesDetail.FirstOrDefault(e => e.EmployeeId == selectedEmployee.EmployeeId)??employeeRepository.GetAsync(selectedEmployee.EmployeeId);
+                _vacationView.EmployeeID = selectedEmployee.EmployeeId;
                 _vacationView.FullName = model.FirstName + " " + model.LastName;
                 _vacationView.Department = model.Department.DepartmentName;
                 _vacationView.DocumentId = model.DocumentId;
@@ -57,7 +61,7 @@ namespace H_Resource.Presenters
                     {
                         _vacationView.Image = Image.FromStream(ms);
                     };
-                }
+                }else _vacationView.Image = Properties.Resources.Img_Avatar;
                 _vacationView.HireDate = model.HireDate;
                 _vacationView.AvailableDays = model.AvailableDays.ToString();
             }
