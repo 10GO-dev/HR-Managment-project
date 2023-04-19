@@ -13,8 +13,6 @@ public partial class VacationModel
 
     public DateTime? EndDate { get; set; }
 
-    public int? AvailableDays { get; set; }
-
     public int? TakenDays { get; set; }
 
     public virtual EmployeeModel? Employee { get; set; }

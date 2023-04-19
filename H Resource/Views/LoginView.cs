@@ -154,9 +154,8 @@ namespace H_Resource.Views
                     UserModel user = db.Users.Where(u => u.UserName == _user).First();
                     if (user.Password == _password)
                     {
-                        IMainContainer view = MainContainer.GetInstance();
-                        new MainContainerPresenter(view);
-                        Hide();
+                        DialogResult = DialogResult.OK;
+                        this.Close();
                     }
                     else
                     {

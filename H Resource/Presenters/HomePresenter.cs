@@ -19,8 +19,20 @@ namespace H_Resource.Presenters
         {
             this.homeView = view;
             this.homeView.ShowEmployeesView += ShowEmployeeView;
+            this.homeView.ShowVacationView += ShowVacationView;
             //Show view
             this.homeView.Show();
+        }
+
+        private void ShowVacationView(object? sender, EventArgs e)
+        {
+            MainContainer container = MainContainer.GetInstance();
+            VacationView view = VacationView.GetInstance(container);
+            EmployeeRepository EmployeeRepository = new EmployeeRepository();
+            VacationRepository repository = new VacationRepository();
+            container.AddView(view);
+            new VacationPresenter(view, repository,EmployeeRepository);
+            this.homeView.Close();
         }
 
         private void ShowEmployeeView(object? sender, EventArgs e)

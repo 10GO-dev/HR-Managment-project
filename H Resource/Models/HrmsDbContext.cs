@@ -68,6 +68,7 @@ public partial class HrmsDbContext : DbContext
             entity.Property(e => e.Address)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+            entity.Property(e => e.AvailableDays).HasDefaultValueSql("((15))");
             entity.Property(e => e.BirthDate).HasColumnType("date");
             entity.Property(e => e.CountryId).HasColumnName("CountryID");
             entity.Property(e => e.DepartmentId).HasColumnName("DepartmentID");
@@ -166,6 +167,7 @@ public partial class HrmsDbContext : DbContext
             entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
             entity.Property(e => e.EndDate).HasColumnType("date");
             entity.Property(e => e.StartDate).HasColumnType("date");
+            entity.Property(e => e.TakenDays).HasColumnName("TakenDays");
 
             entity.HasOne(d => d.Employee).WithMany(p => p.Vacations)
                 .HasForeignKey(d => d.EmployeeId)

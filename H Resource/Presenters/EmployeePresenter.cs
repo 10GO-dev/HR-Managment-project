@@ -1,5 +1,6 @@
 ﻿using H_Resource._Repositories;
 using H_Resource.Models;
+using H_Resource.Models.Request;
 using H_Resource.Views;
 using System.Runtime.CompilerServices;
 
@@ -11,8 +12,7 @@ namespace H_Resource.Presenters
         private IEmployeeView view;
         private IEmployeeRepository repository;
         private BindingSource EmployeeBindingSource;
-        private IEnumerable<EmployeeModel?> employeeList;
-        private static List<EmployeeViewModel> cachedEmployeeList;
+        private static IEnumerable<EmployeeModel?> employeeList;
 
         public EmployeePresenter(IEmployeeView view, IEmployeeRepository repository)
         {
@@ -43,12 +43,10 @@ namespace H_Resource.Presenters
 
         private async void LoadAllEmployeeList()
         {
-            if(cachedEmployeeList != null && view.IsCached)
+            if(employeeList == null || !view.IsCached)
             {
-                EmployeeBindingSource.DataSource = cachedEmployeeList;
-                return;
+                employeeList = await repository.GetAllAsync();
             }
-            employeeList = await repository.GetAllAsync();
             List<EmployeeViewModel> employeeViewList = employeeList.Select(e => new EmployeeViewModel
             {
                 EmployeeId = e.EmployeeId,
@@ -66,51 +64,54 @@ namespace H_Resource.Presenters
                 DepartmentId = e.DepartmentId,
                 CountryId = e.CountryId
             }).ToList();
-            cachedEmployeeList = employeeViewList;
             view.IsCached = true;
-            EmployeeBindingSource.DataSource = cachedEmployeeList;
+            EmployeeBindingSource.DataSource = employeeViewList;
         }
 
 
         private async void LoadSelectedEmployeeToEdit(object? sender, EventArgs e)
         {
-            MainContainer mainContainer = MainContainer.GetInstance();
             var employee = (EmployeeViewModel)EmployeeBindingSource.Current;
-            var employeeToEdit = repository.GetAsync(employee.EmployeeId);
-            if (employeeToEdit != null)
+            if (employee != null)
             {
-
-
-                AddOrEditEmployeeView view = AddOrEditEmployeeView.GetInstance();
-                view.IsEdit = true;
-                view.EmployeeId = employeeToEdit.EmployeeId.ToString();
-                view.FirstName = employeeToEdit.FirstName;
-                view.LastName = employeeToEdit.LastName;
-                view.Email = employeeToEdit.Email;
-                view.Phone = employeeToEdit.Phone;
-                view.Address = employeeToEdit.Address;
-                view.GenderId = employeeToEdit.GenderId;
-                view.DepartmentId = employeeToEdit.DepartmentId;
-                view.DocuemntId = employeeToEdit.DocumentId;
-                view.CountryId = employeeToEdit.CountryId;
-                view.BirthDate = employeeToEdit.BirthDate != null ? (DateTime)employeeToEdit.BirthDate : DateTime.Today;
-                view.HireDate = employeeToEdit.HireDate != null ? (DateTime)employeeToEdit.HireDate : DateTime.Today;
-                if (employeeToEdit.Image != null)
+                MainContainer mainContainer = MainContainer.GetInstance();
+                EmployeeModel? employeeToEdit = employeeList.FirstOrDefault(e => e.EmployeeId == employee.EmployeeId) ?? repository.GetAsync(employee.EmployeeId);
+                if (employeeToEdit != null)
                 {
-                    byte[] imageBytes = employeeToEdit.Image;
-                    using (MemoryStream ms = new(imageBytes))
+
+                    EmployeeDetailView view = EmployeeDetailView.GetInstance();
+                    _ = new EmployeeDetailPresenter(view, repository);
+
+                    view.IsEdit = true;
+                    view.EmployeeId = employeeToEdit.EmployeeId.ToString();
+                    view.FirstName = employeeToEdit.FirstName;
+                    view.LastName = employeeToEdit.LastName;
+                    view.Email = employeeToEdit.Email;
+                    view.Phone = employeeToEdit.Phone;
+                    view.Address = employeeToEdit.Address;
+                    view.GenderId = employeeToEdit.GenderId;
+                    view.DepartmentId = employeeToEdit.DepartmentId;
+                    view.DocuemntId = employeeToEdit.DocumentId;
+                    view.CountryId = employeeToEdit.CountryId;
+                    view.BirthDate = employeeToEdit.BirthDate != null ? (DateTime)employeeToEdit.BirthDate : DateTime.Today;
+                    view.HireDate = employeeToEdit.HireDate != null ? (DateTime)employeeToEdit.HireDate : DateTime.Today;
+                    if (employeeToEdit.Image != null)
                     {
-                        view.Image = Image.FromStream(ms);
-                    };
+                        byte[] imageBytes = employeeToEdit.Image;
+                        using (MemoryStream ms = new(imageBytes))
+                        {
+                            view.Image = Image.FromStream(ms);
+                        };
+                    }
+                    view.setTitle("Editar Empleado");
+                    mainContainer.AddView(view);
+                    this.view.Close();
+                    
                 }
-                view.setTitle("Editar Empleado");
-                mainContainer.AddView(view);
-                this.view.Hide();
-                _ = new AddOrEditEmployeePresenter(view, repository);
-            }
-            else
-            {
-                this.view.Message = "No se pudeo cargar el empleado";
+                else
+                {
+                    this.view.Message = "No se pudeo cargar el empleado";
+                }
             }
         }
 
@@ -131,7 +132,7 @@ namespace H_Resource.Presenters
                     {
                         // eliminar el empleado
                         await repository.DeleteAsync(employeeToDelete);
-                        cachedEmployeeList = null;
+                        employeeList = null;
                         // recargar la lista de empleados
                         LoadAllEmployeeList();
                     }
@@ -152,12 +153,12 @@ namespace H_Resource.Presenters
         {
             
             MainContainer mainContainer = MainContainer.GetInstance();
-            AddOrEditEmployeeView view = AddOrEditEmployeeView.GetInstance();
+            EmployeeDetailView view = EmployeeDetailView.GetInstance();
             mainContainer.AddView(view);
             view.IsEdit = false;
             view.setTitle("Añadir Empleado");
-            _ = new AddOrEditEmployeePresenter(view, repository);
-            this.view.Hide();
+            _ = new EmployeeDetailPresenter(view, repository);
+            this.view.Close();
         }
 
         private async void SearchEmployee(object? sender, EventArgs e)

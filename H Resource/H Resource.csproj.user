@@ -7,9 +7,6 @@
     <Compile Update="Views\Btn_Delete_EmployeesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\EditVacationView.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Views\EmployeeView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -22,7 +19,7 @@
     <Compile Update="Views\MainContainer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\AddOrEditEmployeeView.cs">
+    <Compile Update="Views\EmployeeDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\PayrollView.cs">

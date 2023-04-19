@@ -11,7 +11,7 @@ namespace H_Resource._Repositories
 {
     public abstract class BaseRepository
     {
-        protected HrmsDbContext DbContext = new HrmsDbContext();
+        protected static HrmsDbContext DbContext = new HrmsDbContext();
         protected string ConnectionString = ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
     }
 }

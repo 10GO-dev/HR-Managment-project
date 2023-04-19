@@ -93,7 +93,6 @@
             pb_btnVacation.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_btnVacation.TabIndex = 0;
             pb_btnVacation.TabStop = false;
-            pb_btnVacation.Click += pb_btnVacation_Click;
             pb_btnVacation.MouseEnter += pb_btnVacation_MouseEnter;
             pb_btnVacation.MouseLeave += pb_btnVacation_MouseLeave;
             // 

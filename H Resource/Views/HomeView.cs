@@ -18,13 +18,15 @@ namespace H_Resource.Views
     {
         private static HomeView? instance;
 
-        public event EventHandler<EventArgs> ShowEmployeesView;
+        public event EventHandler<EventArgs>? ShowEmployeesView;
+        public event EventHandler<EventArgs>? ShowVacationView;
 
         private HomeView()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             pb_btnEmployee.Click += delegate { ShowEmployeesView?.Invoke(this, EventArgs.Empty); };
+            pb_btnVacation.Click += delegate { ShowVacationView?.Invoke(this, EventArgs.Empty); };
         }
 
         public static HomeView GetInstance(Form parentContainer)
@@ -150,14 +152,6 @@ namespace H_Resource.Views
             PayrollView payrollForm = new PayrollView();
             this.Hide();
             payrollForm.Show();
-        }
-
-        private void pb_btnVacation_Click(object sender, EventArgs e)
-        {
-            hideAboutPage();
-            VacationView vacationForm = new VacationView();
-            this.Hide();
-            vacationForm.Show();
         }
 
         private void hideAboutPage()

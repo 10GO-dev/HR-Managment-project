@@ -34,6 +34,7 @@ public partial class EmployeeModel
     public int DepartmentId { get; set; }
     [Required(ErrorMessage = "El nacionalidad es requerida")]
     public int CountryId { get; set; }
+    public int? AvailableDays { get; set; }
 
     public virtual CountryModel Country { get; set; } = null!;
     public virtual DepartmentModel Department { get; set; } = null!;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using H_Resource.Utilities;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,7 +63,13 @@ namespace H_Resource.Views
             //Add New Employee event
             Pb_btn_New.Click += delegate { AddNewEvent?.Invoke(this, EventArgs.Empty); };
             //Edit Employee event
-            Pb_btn_Edit.Click += delegate { EditEvent?.Invoke(this, EventArgs.Empty); };
+            Pb_btn_Edit.Click += (s, e) =>
+            {
+                if (Dgv_EmployeeList.SelectedRows.Count == 1)
+                {
+                    EditEvent?.Invoke(s, e);
+                }
+            };
             //Delete Employee Event
             Pb_btn_Delete.Click += delegate
             {
@@ -115,18 +122,9 @@ namespace H_Resource.Views
 
         private void Txtbox_SearchBar_Enter(object sender, EventArgs e)
         {
-            if (txt_SearchEmployee.Text == "Buscar")
+            if (txt_SearchEmployee.Text == $"Buscar por {cb_SearchFilter.SelectedItem}")
             {
                 txt_SearchEmployee.Text = "";
-
-            }
-        }
-
-        private void Txtbox_SearchBar_Leave(object sender, EventArgs e)
-        {
-            if (txt_SearchEmployee.Text == "")
-            {
-                txt_SearchEmployee.Text = "Buscar";
 
             }
         }
@@ -175,20 +173,25 @@ namespace H_Resource.Views
 
         private void cb_SearchFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string[] fields = new string[2] { "Cédula", "Teléfono" };
 
+            if (fields.Contains(cb_SearchFilter.SelectedItem))
+            {
+
+                txt_SearchEmployee.KeyPress += ValidateNumber;
+            }
+            else txt_SearchEmployee.KeyPress -= ValidateNumber;
+            txt_SearchEmployee.Text = $"Buscar por {cb_SearchFilter.SelectedItem}";
         }
 
         private void txt_SearchEmployee_Leave(object sender, EventArgs e)
         {
             if (txt_SearchEmployee.Text.Length == 0 || string.IsNullOrWhiteSpace(txt_SearchEmployee.Text))
             {
-                txt_SearchEmployee.Text = "Buscar";
+                txt_SearchEmployee.Text = $"Buscar por {cb_SearchFilter.SelectedItem}";
             }
         }
 
-        private void Dgv_EmployeeList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        private void ValidateNumber(object sender, KeyPressEventArgs e) => InputValidation.NumberOnly(e);
     }
 }

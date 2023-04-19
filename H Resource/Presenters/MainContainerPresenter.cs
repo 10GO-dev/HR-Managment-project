@@ -15,7 +15,7 @@ namespace H_Resource.Presenters
         {
             this.mainContainer = mainContainer;
             this.mainContainer.ShowHomeView += ShowHomeView;
-            this.mainContainer.Show();
+            Application.Run((Form)this.mainContainer);
         }
 
         private void ShowHomeView(object? sender, EventArgs e)

@@ -118,7 +118,7 @@
             txt_SearchEmployee.Size = new Size(533, 22);
             txt_SearchEmployee.TabIndex = 12;
             txt_SearchEmployee.Tag = "";
-            txt_SearchEmployee.Text = "Buscar";
+            txt_SearchEmployee.Text = "Buscar por Nombre";
             txt_SearchEmployee.Enter += Txtbox_SearchBar_Enter;
             txt_SearchEmployee.Leave += txt_SearchEmployee_Leave;
             // 
@@ -143,7 +143,7 @@
             Pb_btn_EditTxt.BackColor = Color.White;
             Pb_btn_EditTxt.Cursor = Cursors.Hand;
             Pb_btn_EditTxt.Image = Properties.Resources.img_btn_editEmployeeLb;
-            Pb_btn_EditTxt.Location = new Point(930, 222);
+            Pb_btn_EditTxt.Location = new Point(929, 261);
             Pb_btn_EditTxt.Name = "Pb_btn_EditTxt";
             Pb_btn_EditTxt.Size = new Size(90, 35);
             Pb_btn_EditTxt.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -157,7 +157,7 @@
             Pb_btn_NewTxt.BackColor = Color.White;
             Pb_btn_NewTxt.Cursor = Cursors.Hand;
             Pb_btn_NewTxt.Image = Properties.Resources.img_btn_newEmployeeLb;
-            Pb_btn_NewTxt.Location = new Point(930, 164);
+            Pb_btn_NewTxt.Location = new Point(929, 203);
             Pb_btn_NewTxt.Name = "Pb_btn_NewTxt";
             Pb_btn_NewTxt.Size = new Size(90, 35);
             Pb_btn_NewTxt.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -171,7 +171,7 @@
             Pb_btn_Edit.BackColor = Color.Transparent;
             Pb_btn_Edit.Cursor = Cursors.Hand;
             Pb_btn_Edit.Image = Properties.Resources.img_btn_editEmployeeIco;
-            Pb_btn_Edit.Location = new Point(1014, 215);
+            Pb_btn_Edit.Location = new Point(1013, 254);
             Pb_btn_Edit.Name = "Pb_btn_Edit";
             Pb_btn_Edit.Size = new Size(48, 46);
             Pb_btn_Edit.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -186,7 +186,7 @@
             Pb_btn_New.BackColor = Color.Transparent;
             Pb_btn_New.Cursor = Cursors.Hand;
             Pb_btn_New.Image = Properties.Resources.img_btn_AddEmployeeIco;
-            Pb_btn_New.Location = new Point(1014, 157);
+            Pb_btn_New.Location = new Point(1013, 196);
             Pb_btn_New.Name = "Pb_btn_New";
             Pb_btn_New.Size = new Size(50, 46);
             Pb_btn_New.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -201,7 +201,7 @@
             Pb_btn_Delete.BackColor = Color.Transparent;
             Pb_btn_Delete.Cursor = Cursors.Hand;
             Pb_btn_Delete.Image = Properties.Resources.img_btn_delEmployeIco;
-            Pb_btn_Delete.Location = new Point(1014, 273);
+            Pb_btn_Delete.Location = new Point(1013, 312);
             Pb_btn_Delete.Name = "Pb_btn_Delete";
             Pb_btn_Delete.Size = new Size(48, 46);
             Pb_btn_Delete.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -212,6 +212,8 @@
             // 
             // Dgv_EmployeeList
             // 
+            Dgv_EmployeeList.AllowUserToAddRows = false;
+            Dgv_EmployeeList.AllowUserToDeleteRows = false;
             Dgv_EmployeeList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Dgv_EmployeeList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dgv_EmployeeList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -220,7 +222,7 @@
             Dgv_EmployeeList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(237, 230, 219);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(237, 230, 219);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -238,7 +240,8 @@
             Dgv_EmployeeList.EditMode = DataGridViewEditMode.EditProgrammatically;
             Dgv_EmployeeList.EnableHeadersVisualStyles = false;
             Dgv_EmployeeList.GridColor = Color.Gray;
-            Dgv_EmployeeList.Location = new Point(21, 141);
+            Dgv_EmployeeList.Location = new Point(21, 145);
+            Dgv_EmployeeList.MultiSelect = false;
             Dgv_EmployeeList.Name = "Dgv_EmployeeList";
             Dgv_EmployeeList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             Dgv_EmployeeList.RowHeadersVisible = false;
@@ -250,9 +253,8 @@
             Dgv_EmployeeList.RowsDefaultCellStyle = dataGridViewCellStyle3;
             Dgv_EmployeeList.RowTemplate.Height = 25;
             Dgv_EmployeeList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Dgv_EmployeeList.Size = new Size(969, 386);
+            Dgv_EmployeeList.Size = new Size(971, 386);
             Dgv_EmployeeList.TabIndex = 14;
-            Dgv_EmployeeList.CellContentClick += Dgv_EmployeeList_CellContentClick;
             Dgv_EmployeeList.Paint += Dgv_EmployeeList_Paint;
             // 
             // Pb_btn_DeleteTxt
@@ -262,7 +264,7 @@
             Pb_btn_DeleteTxt.Cursor = Cursors.Hand;
             Pb_btn_DeleteTxt.ErrorImage = null;
             Pb_btn_DeleteTxt.Image = Properties.Resources.img_btn_delEmployeeLb;
-            Pb_btn_DeleteTxt.Location = new Point(930, 279);
+            Pb_btn_DeleteTxt.Location = new Point(929, 318);
             Pb_btn_DeleteTxt.Name = "Pb_btn_DeleteTxt";
             Pb_btn_DeleteTxt.Size = new Size(90, 35);
             Pb_btn_DeleteTxt.SizeMode = PictureBoxSizeMode.StretchImage;
