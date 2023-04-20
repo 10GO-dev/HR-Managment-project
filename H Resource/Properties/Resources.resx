@@ -118,43 +118,124 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Img_Background_btn_vacationHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_vacationHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Img_Background_btn_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_Btn_Si_EmployeesControler_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_Btn_Si_EmployeesControler_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon_Back_Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Icon_Back_Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Img_HomeLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_HomeLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_btn_delEmployeeLb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_btn_delEmployeeLb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_Close_Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Icon_Close_Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_minimize_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_minimize_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Img_Background_btn_vacation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_vacation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_btn_AddEmployeeIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_btn_AddEmployeeIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Img_Background_txt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_txt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HomeLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\HomeLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_txt_EmployeeFilter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_txt_EmployeeFilter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_minimize_button_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_minimize_button_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_btn_editEmployeeLb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_btn_editEmployeeLb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_Background_btn_employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Img_Background_btn_employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="img_maximized_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_maximized_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_Btn_No_EmployeesControler_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_Btn_No_EmployeesControler_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Btn_Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Btn_Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_Btn_No_EmployeesControler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_Btn_No_EmployeesControler.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_maximized_button_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_maximized_button_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_filterIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_filterIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_logoName" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_logoName.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Background_btn_vacation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Background_btn_vacation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Background_btn_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Background_btn_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_btn_editEmployeeIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_btn_editEmployeeIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Btn_Comfirm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Btn_Comfirm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Background_txt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Background_txt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoNameCornSilk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\LogoNameCornSilk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Txt_Nomina" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Txt_Nomina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_maximize_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_maximize_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Img_Background_btn_LoginHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Img_Background_btn_LoginHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Img_Background_btn_employeeHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_employeeHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Img_Background_btn_vacationHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Background_btn_vacationHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Img_Background_btn_PayrollHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_Background_btn_PayrollHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_close_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_close_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_btn_delEmployeIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_btn_delEmployeIco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_Btn_Si_EmployeesControler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_Btn_Si_EmployeesControler.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Img_Background_btn_Payroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\Img_Background_btn_Payroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Img_logoName" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Img\Img_logoName.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_close_button_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_close_button_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_btn_newEmployeeLb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_btn_newEmployeeLb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_maximize_button_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_maximize_button_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_HomeLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_HomeLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_about_btnClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\img_about_btnClose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Background_btn_PayrollHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Background_btn_PayrollHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Background_btn_employeeHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Background_btn_employeeHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Icon_Shape" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\Img_Icon_Shape.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

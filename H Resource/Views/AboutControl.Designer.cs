@@ -189,7 +189,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.img_about_btnClose;
             pictureBox1.Location = new Point(357, 17);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(31, 32);
@@ -197,6 +197,8 @@
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            pictureBox1.MouseEnter += pictureBox1_MouseEnter;
+            pictureBox1.MouseLeave += pictureBox1_MouseLeave;
             // 
             // AboutControl
             // 
