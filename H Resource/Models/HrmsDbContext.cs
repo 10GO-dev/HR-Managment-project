@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using H_Resource.Properties;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.ApplicationServices;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace H_Resource.Models;
 
@@ -33,7 +36,8 @@ public partial class HrmsDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-        optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString);
+        //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString);
+        optionsBuilder.UseSqlServer("Server = tcp:hresource.database.windows.net, 1433; Initial Catalog = HRMS_db; Persist Security Info = False; User ID = hradmin; Password = Hr3s0urc3s; MultipleActiveResultSets = True; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -138,7 +142,7 @@ public partial class HrmsDbContext : DbContext
 
             entity.HasOne(d => d.Employee).WithMany(p => p.Payrolls)
                 .HasForeignKey(d => d.EmployeeId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Payroll_Employee");
         });
 
@@ -171,6 +175,7 @@ public partial class HrmsDbContext : DbContext
 
             entity.HasOne(d => d.Employee).WithMany(p => p.Vacations)
                 .HasForeignKey(d => d.EmployeeId)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__Vacations__Emplo__43D61337");
         });
 

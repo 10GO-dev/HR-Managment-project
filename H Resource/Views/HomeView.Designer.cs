@@ -69,7 +69,6 @@
             pb_btnPayroll.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_btnPayroll.TabIndex = 0;
             pb_btnPayroll.TabStop = false;
-            pb_btnPayroll.Click += pb_btnPayroll_Click;
             pb_btnPayroll.MouseEnter += pb_btnPayroll_MouseEnter;
             pb_btnPayroll.MouseLeave += pb_btnPayroll_MouseLeave;
             // 

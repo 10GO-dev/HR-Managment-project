@@ -11,16 +11,46 @@ using System.Windows.Forms;
 
 namespace H_Resource.Views
 {
-    public partial class PayrollView : Form
+    public partial class PayrollView : Form, IPayrollView
     {
-        public PayrollView()
+        private static PayrollView instance;
+
+        public event EventHandler SearchEvent;
+        public event EventHandler<EventArgs> ShowHomeView;
+
+        public string SearchValue { get => Txtbox_SearchBar.Text; set => Txtbox_SearchBar.Text = value; }
+
+        public string? SearchCriteria => cb_SearchFilter.SelectedItem.ToString();
+
+        public bool IsCached { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        private PayrollView()
         {
             InitializeComponent();
+            btnBackHome.Click += delegate { ShowHomeView?.Invoke(this, EventArgs.Empty); };
+            //Search Event
+            Txtbox_SearchBar.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    SearchEvent?.Invoke(this, EventArgs.Empty);
+                }
+            };
+        }
+
+        public static PayrollView GetInstance(Form parentContainer)
+        {
+            if (instance == null || instance.IsDisposed)
+                instance = new PayrollView();
+            instance.TopLevel = false;
+            instance.MdiParent = parentContainer;
+            instance.Dock = DockStyle.Fill;
+            return instance;
         }
 
         private void Txtbox_SearchBar_Enter(object sender, EventArgs e)
         {
-            if (Txtbox_SearchBar.Text == "Buscar")
+            if (Txtbox_SearchBar.Text == $"Buscar por {cb_SearchFilter.SelectedItem}")
             {
                 Txtbox_SearchBar.Text = "";
 
@@ -29,10 +59,9 @@ namespace H_Resource.Views
 
         private void Txtbox_SearchBar_Leave(object sender, EventArgs e)
         {
-            if (Txtbox_SearchBar.Text == "")
+            if (Txtbox_SearchBar.Text.Length == 0 || string.IsNullOrWhiteSpace(Txtbox_SearchBar.Text))
             {
-                Txtbox_SearchBar.Text = "Buscar";
-
+                Txtbox_SearchBar.Text = $"Buscar por {cb_SearchFilter.SelectedItem}";
             }
         }
 
@@ -65,6 +94,21 @@ namespace H_Resource.Views
 
             path.CloseFigure();
             Dgv_PayrollList.Region = new Region(path);
+        }
+
+        public void SetPayrollsBindingSource(BindingSource payrolls)
+        {
+            Dgv_PayrollList.DataSource = payrolls;
+        }
+
+        private void PayrollView_Load(object sender, EventArgs e)
+        {
+            cb_SearchFilter.SelectedIndex = 0;
+        }
+
+        private void cb_SearchFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           Txtbox_SearchBar.Text = $"Buscar por {cb_SearchFilter.SelectedItem}";
         }
     }
 }

@@ -10,6 +10,8 @@ namespace H_Resource.Models.Request
     public class VacationEmployeeList
     {
         [Browsable(false)]
+        public int? VacationID { get; set; }
+        [Browsable(false)]
         public int EmployeeId { get; set; }
         [DisplayName("Nombre Completo")]
         public string FullName { get; set; } = null!;

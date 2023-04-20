@@ -25,6 +25,8 @@ namespace H_Resource.Views
         public DateTime? HireDate { get; set; }
         public int? DepartmentId { get; set; }
         public string DocuemntId { get; set; }
+
+        public int Salary { get;set; }
         public int? CountryId { get; set; }
         string Message { get; set; }
         bool IsSuccessful { get; set; }

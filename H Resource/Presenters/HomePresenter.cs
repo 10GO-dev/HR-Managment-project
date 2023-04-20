@@ -20,6 +20,7 @@ namespace H_Resource.Presenters
             this.homeView = view;
             this.homeView.ShowEmployeesView += ShowEmployeeView;
             this.homeView.ShowVacationView += ShowVacationView;
+            this.homeView.ShowPayrollView += ShowPayrollView;
             //Show view
             this.homeView.Show();
         }
@@ -43,6 +44,16 @@ namespace H_Resource.Presenters
             EmployeeRepository repository = new EmployeeRepository();
             container.AddView(view);
             new EmployeePresenter(view, repository);
+            this.homeView.Close();
+        }
+        private void ShowPayrollView(object? sender, EventArgs e)
+        {
+            MainContainer container = MainContainer.GetInstance();
+            PayrollView view = PayrollView.GetInstance(container);
+            EmployeeRepository EmployeeRepository = new EmployeeRepository();
+            PayrollRepository repository = new PayrollRepository();
+            container.AddView(view);
+            new PayrollPresenter(view, repository);
             this.homeView.Close();
         }
     }

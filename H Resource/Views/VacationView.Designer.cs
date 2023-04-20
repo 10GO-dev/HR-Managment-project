@@ -45,12 +45,18 @@
             tabPageVacationList = new TabPage();
             BtnEdit = new PictureBox();
             BtnEditLabel = new PictureBox();
-            BtnDelete = new PictureBox();
             BtnAddNew = new PictureBox();
-            BtnDeleteLabel = new PictureBox();
             BtnAddNewLabel = new PictureBox();
             tabPageAddOrEdit = new TabPage();
             pn_EmployeeCard = new Panel();
+            pn_employeeSelect = new Panel();
+            btnCloseEmployeeSelector = new Button();
+            btnLoadSelectedEmployee = new Button();
+            label8 = new Label();
+            label7 = new Label();
+            txtSelectEmployeeSearch = new TextBox();
+            dgv_EmployeeList = new DataGridView();
+            pictureBox1 = new PictureBox();
             btnCancel = new Button();
             btnSave = new Button();
             Pb_imgPerfil = new PictureBox();
@@ -72,14 +78,6 @@
             Lbl_Startdate = new Label();
             Dtp_Enddate = new DateTimePicker();
             Lbl_Enddate = new Label();
-            pn_employeeSelect = new Panel();
-            btnCloseEmployeeSelector = new Button();
-            btnLoadSelectedEmployee = new Button();
-            label8 = new Label();
-            label7 = new Label();
-            txtSelectEmployeeSearch = new TextBox();
-            dgv_EmployeeList = new DataGridView();
-            pictureBox1 = new PictureBox();
             pn_TitleBar = new Panel();
             ((System.ComponentModel.ISupportInitialize)Pb_txtVacation).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb_SearchBar).BeginInit();
@@ -90,18 +88,16 @@
             tabPageVacationList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnEdit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnEditLabel).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BtnDelete).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnAddNew).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BtnDeleteLabel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnAddNewLabel).BeginInit();
             tabPageAddOrEdit.SuspendLayout();
             pn_EmployeeCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Pb_imgPerfil).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnOpenEmployeeSelector).BeginInit();
-            panel2.SuspendLayout();
             pn_employeeSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_EmployeeList).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_imgPerfil).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnOpenEmployeeSelector).BeginInit();
+            panel2.SuspendLayout();
             pn_TitleBar.SuspendLayout();
             SuspendLayout();
             // 
@@ -214,7 +210,6 @@
             tabControlVacationView.Controls.Add(tabPageAddOrEdit);
             tabControlVacationView.Dock = DockStyle.Fill;
             tabControlVacationView.Location = new Point(0, 84);
-            tabControlVacationView.Margin = new Padding(0);
             tabControlVacationView.Name = "tabControlVacationView";
             tabControlVacationView.Padding = new Point(0, 0);
             tabControlVacationView.SelectedIndex = 0;
@@ -226,9 +221,7 @@
             // 
             tabPageVacationList.Controls.Add(BtnEdit);
             tabPageVacationList.Controls.Add(BtnEditLabel);
-            tabPageVacationList.Controls.Add(BtnDelete);
             tabPageVacationList.Controls.Add(BtnAddNew);
-            tabPageVacationList.Controls.Add(BtnDeleteLabel);
             tabPageVacationList.Controls.Add(BtnAddNewLabel);
             tabPageVacationList.Controls.Add(Pb_Shape);
             tabPageVacationList.Controls.Add(Dgv_VacationList);
@@ -271,19 +264,6 @@
             BtnEditLabel.TabStop = false;
             BtnEditLabel.Visible = false;
             // 
-            // BtnDelete
-            // 
-            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnDelete.BackColor = Color.Transparent;
-            BtnDelete.Cursor = Cursors.Hand;
-            BtnDelete.Image = Properties.Resources.img_btn_delEmployeIco;
-            BtnDelete.Location = new Point(1009, 207);
-            BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(48, 46);
-            BtnDelete.SizeMode = PictureBoxSizeMode.StretchImage;
-            BtnDelete.TabIndex = 28;
-            BtnDelete.TabStop = false;
-            // 
             // BtnAddNew
             // 
             BtnAddNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -296,21 +276,6 @@
             BtnAddNew.SizeMode = PictureBoxSizeMode.StretchImage;
             BtnAddNew.TabIndex = 27;
             BtnAddNew.TabStop = false;
-            // 
-            // BtnDeleteLabel
-            // 
-            BtnDeleteLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnDeleteLabel.BackColor = Color.White;
-            BtnDeleteLabel.Cursor = Cursors.Hand;
-            BtnDeleteLabel.ErrorImage = null;
-            BtnDeleteLabel.Image = Properties.Resources.img_btn_delEmployeeLb;
-            BtnDeleteLabel.Location = new Point(925, 213);
-            BtnDeleteLabel.Name = "BtnDeleteLabel";
-            BtnDeleteLabel.Size = new Size(90, 35);
-            BtnDeleteLabel.SizeMode = PictureBoxSizeMode.StretchImage;
-            BtnDeleteLabel.TabIndex = 26;
-            BtnDeleteLabel.TabStop = false;
-            BtnDeleteLabel.Visible = false;
             // 
             // BtnAddNewLabel
             // 
@@ -363,6 +328,136 @@
             pn_EmployeeCard.Size = new Size(726, 429);
             pn_EmployeeCard.TabIndex = 53;
             // 
+            // pn_employeeSelect
+            // 
+            pn_employeeSelect.BackColor = Color.FromArgb(26, 60, 64);
+            pn_employeeSelect.Controls.Add(btnCloseEmployeeSelector);
+            pn_employeeSelect.Controls.Add(btnLoadSelectedEmployee);
+            pn_employeeSelect.Controls.Add(label8);
+            pn_employeeSelect.Controls.Add(label7);
+            pn_employeeSelect.Controls.Add(txtSelectEmployeeSearch);
+            pn_employeeSelect.Controls.Add(dgv_EmployeeList);
+            pn_employeeSelect.Controls.Add(pictureBox1);
+            pn_employeeSelect.Dock = DockStyle.Right;
+            pn_employeeSelect.Location = new Point(367, 0);
+            pn_employeeSelect.Name = "pn_employeeSelect";
+            pn_employeeSelect.Size = new Size(359, 429);
+            pn_employeeSelect.TabIndex = 29;
+            // 
+            // btnCloseEmployeeSelector
+            // 
+            btnCloseEmployeeSelector.Location = new Point(192, 400);
+            btnCloseEmployeeSelector.Name = "btnCloseEmployeeSelector";
+            btnCloseEmployeeSelector.Size = new Size(75, 23);
+            btnCloseEmployeeSelector.TabIndex = 32;
+            btnCloseEmployeeSelector.Text = "Cancelar";
+            btnCloseEmployeeSelector.UseVisualStyleBackColor = true;
+            btnCloseEmployeeSelector.Click += btnCloseEmployeeSelector_Click;
+            // 
+            // btnLoadSelectedEmployee
+            // 
+            btnLoadSelectedEmployee.Location = new Point(273, 400);
+            btnLoadSelectedEmployee.Name = "btnLoadSelectedEmployee";
+            btnLoadSelectedEmployee.Size = new Size(75, 23);
+            btnLoadSelectedEmployee.TabIndex = 32;
+            btnLoadSelectedEmployee.Text = "Aceptar";
+            btnLoadSelectedEmployee.UseVisualStyleBackColor = true;
+            btnLoadSelectedEmployee.Click += btnLoadSelectedEmployee_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ControlLightLight;
+            label8.Location = new Point(11, 14);
+            label8.Name = "label8";
+            label8.Size = new Size(154, 17);
+            label8.TabIndex = 31;
+            label8.Text = "Selecciona un empleado";
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.Location = new Point(10, 404);
+            label7.Name = "label7";
+            label7.Size = new Size(153, 15);
+            label7.TabIndex = 30;
+            label7.Text = "Doble click apra seleccionar";
+            // 
+            // txtSelectEmployeeSearch
+            // 
+            txtSelectEmployeeSearch.BackColor = Color.FromArgb(237, 230, 219);
+            txtSelectEmployeeSearch.BorderStyle = BorderStyle.None;
+            txtSelectEmployeeSearch.Enabled = false;
+            txtSelectEmployeeSearch.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSelectEmployeeSearch.ForeColor = Color.FromArgb(26, 60, 64);
+            txtSelectEmployeeSearch.Location = new Point(25, 53);
+            txtSelectEmployeeSearch.Name = "txtSelectEmployeeSearch";
+            txtSelectEmployeeSearch.Size = new Size(308, 22);
+            txtSelectEmployeeSearch.TabIndex = 28;
+            txtSelectEmployeeSearch.Tag = "";
+            txtSelectEmployeeSearch.Text = "Buscar";
+            // 
+            // dgv_EmployeeList
+            // 
+            dgv_EmployeeList.AllowUserToAddRows = false;
+            dgv_EmployeeList.AllowUserToDeleteRows = false;
+            dgv_EmployeeList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgv_EmployeeList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_EmployeeList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgv_EmployeeList.BackgroundColor = Color.White;
+            dgv_EmployeeList.BorderStyle = BorderStyle.None;
+            dgv_EmployeeList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(237, 230, 219);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(237, 230, 219);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgv_EmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgv_EmployeeList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(65, 125, 122);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.DarkCyan;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgv_EmployeeList.DefaultCellStyle = dataGridViewCellStyle5;
+            dgv_EmployeeList.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgv_EmployeeList.EnableHeadersVisualStyles = false;
+            dgv_EmployeeList.GridColor = Color.Gray;
+            dgv_EmployeeList.Location = new Point(10, 100);
+            dgv_EmployeeList.MultiSelect = false;
+            dgv_EmployeeList.Name = "dgv_EmployeeList";
+            dgv_EmployeeList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgv_EmployeeList.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(65, 125, 122);
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.ControlLightLight;
+            dgv_EmployeeList.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dgv_EmployeeList.RowTemplate.Height = 25;
+            dgv_EmployeeList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_EmployeeList.Size = new Size(338, 286);
+            dgv_EmployeeList.TabIndex = 27;
+            dgv_EmployeeList.DataSourceChanged += dgv_EmployeeList_DataSourceChanged;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(11, 43);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(338, 43);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 29;
+            pictureBox1.TabStop = false;
+            // 
             // btnCancel
             // 
             btnCancel.FlatAppearance.BorderSize = 0;
@@ -401,6 +496,7 @@
             Pb_imgPerfil.SizeMode = PictureBoxSizeMode.StretchImage;
             Pb_imgPerfil.TabIndex = 45;
             Pb_imgPerfil.TabStop = false;
+            Pb_imgPerfil.Paint += Pb_imgPerfil_Paint;
             // 
             // dtp_eHireDate
             // 
@@ -588,7 +684,6 @@
             Dtp_Enddate.Name = "Dtp_Enddate";
             Dtp_Enddate.Size = new Size(154, 25);
             Dtp_Enddate.TabIndex = 43;
-            Dtp_Enddate.ValueChanged += Dtp_Enddate_ValueChanged;
             // 
             // Lbl_Enddate
             // 
@@ -601,136 +696,6 @@
             Lbl_Enddate.Size = new Size(79, 21);
             Lbl_Enddate.TabIndex = 41;
             Lbl_Enddate.Text = "Fecha fin:";
-            // 
-            // pn_employeeSelect
-            // 
-            pn_employeeSelect.BackColor = Color.FromArgb(26, 60, 64);
-            pn_employeeSelect.Controls.Add(btnCloseEmployeeSelector);
-            pn_employeeSelect.Controls.Add(btnLoadSelectedEmployee);
-            pn_employeeSelect.Controls.Add(label8);
-            pn_employeeSelect.Controls.Add(label7);
-            pn_employeeSelect.Controls.Add(txtSelectEmployeeSearch);
-            pn_employeeSelect.Controls.Add(dgv_EmployeeList);
-            pn_employeeSelect.Controls.Add(pictureBox1);
-            pn_employeeSelect.Dock = DockStyle.Right;
-            pn_employeeSelect.Location = new Point(367, 0);
-            pn_employeeSelect.Name = "pn_employeeSelect";
-            pn_employeeSelect.Size = new Size(359, 429);
-            pn_employeeSelect.TabIndex = 29;
-            // 
-            // btnCloseEmployeeSelector
-            // 
-            btnCloseEmployeeSelector.Location = new Point(192, 400);
-            btnCloseEmployeeSelector.Name = "btnCloseEmployeeSelector";
-            btnCloseEmployeeSelector.Size = new Size(75, 23);
-            btnCloseEmployeeSelector.TabIndex = 32;
-            btnCloseEmployeeSelector.Text = "Cancelar";
-            btnCloseEmployeeSelector.UseVisualStyleBackColor = true;
-            btnCloseEmployeeSelector.Click += btnCloseEmployeeSelector_Click;
-            // 
-            // btnLoadSelectedEmployee
-            // 
-            btnLoadSelectedEmployee.Location = new Point(273, 400);
-            btnLoadSelectedEmployee.Name = "btnLoadSelectedEmployee";
-            btnLoadSelectedEmployee.Size = new Size(75, 23);
-            btnLoadSelectedEmployee.TabIndex = 32;
-            btnLoadSelectedEmployee.Text = "Aceptar";
-            btnLoadSelectedEmployee.UseVisualStyleBackColor = true;
-            btnLoadSelectedEmployee.Click += btnLoadSelectedEmployee_Click;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = SystemColors.ControlLightLight;
-            label8.Location = new Point(11, 14);
-            label8.Name = "label8";
-            label8.Size = new Size(154, 17);
-            label8.TabIndex = 31;
-            label8.Text = "Selecciona un empleado";
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(10, 404);
-            label7.Name = "label7";
-            label7.Size = new Size(153, 15);
-            label7.TabIndex = 30;
-            label7.Text = "Doble click apra seleccionar";
-            // 
-            // txtSelectEmployeeSearch
-            // 
-            txtSelectEmployeeSearch.BackColor = Color.FromArgb(237, 230, 219);
-            txtSelectEmployeeSearch.BorderStyle = BorderStyle.None;
-            txtSelectEmployeeSearch.Enabled = false;
-            txtSelectEmployeeSearch.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSelectEmployeeSearch.ForeColor = Color.FromArgb(26, 60, 64);
-            txtSelectEmployeeSearch.Location = new Point(25, 53);
-            txtSelectEmployeeSearch.Name = "txtSelectEmployeeSearch";
-            txtSelectEmployeeSearch.Size = new Size(308, 22);
-            txtSelectEmployeeSearch.TabIndex = 28;
-            txtSelectEmployeeSearch.Tag = "";
-            txtSelectEmployeeSearch.Text = "Buscar";
-            // 
-            // dgv_EmployeeList
-            // 
-            dgv_EmployeeList.AllowUserToAddRows = false;
-            dgv_EmployeeList.AllowUserToDeleteRows = false;
-            dgv_EmployeeList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgv_EmployeeList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgv_EmployeeList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgv_EmployeeList.BackgroundColor = Color.White;
-            dgv_EmployeeList.BorderStyle = BorderStyle.None;
-            dgv_EmployeeList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(237, 230, 219);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(237, 230, 219);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgv_EmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dgv_EmployeeList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(65, 125, 122);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.DarkCyan;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgv_EmployeeList.DefaultCellStyle = dataGridViewCellStyle5;
-            dgv_EmployeeList.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dgv_EmployeeList.EnableHeadersVisualStyles = false;
-            dgv_EmployeeList.GridColor = Color.Gray;
-            dgv_EmployeeList.Location = new Point(10, 100);
-            dgv_EmployeeList.MultiSelect = false;
-            dgv_EmployeeList.Name = "dgv_EmployeeList";
-            dgv_EmployeeList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgv_EmployeeList.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(65, 125, 122);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.ControlLightLight;
-            dgv_EmployeeList.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            dgv_EmployeeList.RowTemplate.Height = 25;
-            dgv_EmployeeList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_EmployeeList.Size = new Size(338, 286);
-            dgv_EmployeeList.TabIndex = 27;
-            dgv_EmployeeList.DataSourceChanged += dgv_EmployeeList_DataSourceChanged;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(11, 43);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(338, 43);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 29;
-            pictureBox1.TabStop = false;
             // 
             // pn_TitleBar
             // 
@@ -763,21 +728,19 @@
             tabPageVacationList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)BtnEdit).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnEditLabel).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BtnDelete).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnAddNew).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BtnDeleteLabel).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnAddNewLabel).EndInit();
             tabPageAddOrEdit.ResumeLayout(false);
             pn_EmployeeCard.ResumeLayout(false);
             pn_EmployeeCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)Pb_imgPerfil).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnOpenEmployeeSelector).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             pn_employeeSelect.ResumeLayout(false);
             pn_employeeSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_EmployeeList).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_imgPerfil).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnOpenEmployeeSelector).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             pn_TitleBar.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -794,9 +757,7 @@
         private TabPage tabPageVacationList;
         private TabPage tabPageAddOrEdit;
         private Panel pn_TitleBar;
-        private PictureBox BtnDelete;
         private PictureBox BtnAddNew;
-        private PictureBox BtnDeleteLabel;
         private PictureBox BtnAddNewLabel;
         private PictureBox BtnEdit;
         private PictureBox BtnEditLabel;

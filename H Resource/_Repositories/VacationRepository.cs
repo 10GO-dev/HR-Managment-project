@@ -5,6 +5,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,68 @@ namespace H_Resource._Repositories
 
         public async Task AddAsync(VacationModel vacation)
         {
-            DbContext.Vacations.Add(vacation);
-            await DbContext.SaveChangesAsync();
+            using IDbConnection db = new SqlConnection(ConnectionString);
+            db.Open();
+
+            IDbTransaction transaction = db.BeginTransaction();
+
+            try
+            {
+                // Verificar que el empleado tiene suficientes días disponibles
+                var employee = await db.QuerySingleOrDefaultAsync<EmployeeModel>(
+                    "SELECT * FROM Employees WHERE EmployeeId = @EmployeeId", new { vacation.EmployeeId }, transaction);
+
+                if (employee == null)
+                {
+                    throw new ArgumentException("Employee not found.");
+                }
+
+                if (employee.AvailableDays < vacation.TakenDays)
+                {
+                    throw new ArgumentException("Employee does not have enough available vacation days.");
+                }
+
+                // Insertar la nueva vacación
+                string insertVacationQuery = @"
+            INSERT INTO Vacations (EmployeeId, StartDate, EndDate, TakenDays)
+            VALUES (@EmployeeId, @StartDate, @EndDate, @TakenDays);
+            SELECT CAST(SCOPE_IDENTITY() as int);";
+
+                int vacationId = await db.ExecuteScalarAsync<int>(
+                    insertVacationQuery,
+                    new
+                    {
+                        vacation.EmployeeId,
+                        vacation.StartDate,
+                        vacation.EndDate,
+                        vacation.TakenDays
+                    },
+                    transaction);
+
+                // Actualizar los días disponibles del empleado
+                string updateEmployeeQuery = @"
+            UPDATE Employees
+            SET AvailableDays = AvailableDays - @TakenDays
+            WHERE EmployeeId = @EmployeeId;";
+
+                await db.ExecuteAsync(
+                    updateEmployeeQuery,
+                    new
+                    {
+                        vacation.TakenDays,
+                        vacation.EmployeeId
+                    },
+                    transaction);
+
+                transaction.Commit();
+            }
+            catch
+            {
+                transaction.Rollback();
+                throw;
+            }
         }
+
 
         public async Task DeleteAsync(VacationModel vacation)
         {
@@ -30,14 +90,31 @@ namespace H_Resource._Repositories
 
         public async Task EditAsync(VacationModel vacation)
         {
-            DbContext.Vacations.Entry(vacation).State = EntityState.Modified;
-            await DbContext.SaveChangesAsync(); 
+            using IDbConnection db = new SqlConnection(ConnectionString);
+            db.Open();
+
+            string sqlUpdateVacation = @"
+        UPDATE Vacations 
+        SET StartDate = @StartDate, EndDate = @EndDate
+        WHERE VacationID = @VacationID;
+    ";
+
+            await db.ExecuteAsync(sqlUpdateVacation, vacation);
+
+            string updateEmployeeQuery = @"
+            UPDATE Employees
+            SET AvailableDays = AvailableDays - @TakenDays
+            WHERE EmployeeId = @EmployeeId;";
+
+            await db.ExecuteAsync(updateEmployeeQuery, new { TakenDays = vacation.TakenDays, EmployeeId = vacation.EmployeeId });
         }
+
 
         public async Task<IEnumerable<VacationEmployeeList>> FindByValueAsync(string value)
         {
             const string sql = @"
-        SELECT 
+        SELECT
+            v.VacationID,
             e.EmployeeId, 
             e.FirstName+' '+e.LastName as FullName, 
             d.DepartmentName as Department, 
@@ -73,6 +150,7 @@ namespace H_Resource._Repositories
         {
             var query = @"
          SELECT 
+            v.VacationID,
             e.EmployeeId, 
             e.FirstName+' '+e.LastName as FullName, 
             d.DepartmentName as Department, 

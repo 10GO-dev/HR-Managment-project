@@ -10,6 +10,8 @@ namespace H_Resource.Models.Request
     public class EmployeeVacationViewModel
     {
         [Browsable(false)]
+        public int VacationId { get; set; }
+        [Browsable(false)]
         public int EmployeeId { get; set; }
         [DisplayName("Nombre")]
         public string FullName { get; set; }

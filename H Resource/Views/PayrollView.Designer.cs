@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayrollView));
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Pb_txtPayroll = new PictureBox();
             Pb_SearchBar = new PictureBox();
             Txtbox_SearchBar = new TextBox();
@@ -60,6 +60,7 @@
             // 
             // Pb_SearchBar
             // 
+            Pb_SearchBar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Pb_SearchBar.Image = (Image)resources.GetObject("Pb_SearchBar.Image");
             Pb_SearchBar.Location = new Point(392, 43);
             Pb_SearchBar.Name = "Pb_SearchBar";
@@ -70,6 +71,7 @@
             // 
             // Txtbox_SearchBar
             // 
+            Txtbox_SearchBar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Txtbox_SearchBar.BackColor = Color.FromArgb(237, 230, 219);
             Txtbox_SearchBar.BorderStyle = BorderStyle.None;
             Txtbox_SearchBar.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -79,12 +81,13 @@
             Txtbox_SearchBar.Size = new Size(533, 22);
             Txtbox_SearchBar.TabIndex = 13;
             Txtbox_SearchBar.Tag = "";
-            Txtbox_SearchBar.Text = "Buscar";
+            Txtbox_SearchBar.Text = "Buscar por Nombre";
             Txtbox_SearchBar.Enter += Txtbox_SearchBar_Enter;
             Txtbox_SearchBar.Leave += Txtbox_SearchBar_Leave;
             // 
             // Pb_Shape
             // 
+            Pb_Shape.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Pb_Shape.BackColor = Color.FromArgb(237, 230, 219);
             Pb_Shape.Cursor = Cursors.Hand;
             Pb_Shape.Image = (Image)resources.GetObject("Pb_Shape.Image");
@@ -103,23 +106,23 @@
             Dgv_PayrollList.BackgroundColor = Color.White;
             Dgv_PayrollList.BorderStyle = BorderStyle.None;
             Dgv_PayrollList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = Color.FromArgb(237, 230, 219);
-            dataGridViewCellStyle19.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle19.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = Color.FromArgb(237, 230, 219);
-            dataGridViewCellStyle19.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
-            Dgv_PayrollList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(237, 230, 219);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(237, 230, 219);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            Dgv_PayrollList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             Dgv_PayrollList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = Color.FromArgb(65, 125, 122);
-            dataGridViewCellStyle20.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle20.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = Color.DarkCyan;
-            dataGridViewCellStyle20.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.False;
-            Dgv_PayrollList.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(65, 125, 122);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.DarkCyan;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            Dgv_PayrollList.DefaultCellStyle = dataGridViewCellStyle2;
             Dgv_PayrollList.EditMode = DataGridViewEditMode.EditProgrammatically;
             Dgv_PayrollList.EnableHeadersVisualStyles = false;
             Dgv_PayrollList.GridColor = Color.Gray;
@@ -127,12 +130,12 @@
             Dgv_PayrollList.Name = "Dgv_PayrollList";
             Dgv_PayrollList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             Dgv_PayrollList.RowHeadersVisible = false;
-            dataGridViewCellStyle21.BackColor = Color.White;
-            dataGridViewCellStyle21.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle21.ForeColor = Color.Black;
-            dataGridViewCellStyle21.SelectionBackColor = Color.FromArgb(65, 125, 122);
-            dataGridViewCellStyle21.SelectionForeColor = SystemColors.ControlLightLight;
-            Dgv_PayrollList.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(65, 125, 122);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlLightLight;
+            Dgv_PayrollList.RowsDefaultCellStyle = dataGridViewCellStyle3;
             Dgv_PayrollList.RowTemplate.Height = 25;
             Dgv_PayrollList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Dgv_PayrollList.Size = new Size(969, 386);
@@ -159,11 +162,12 @@
             cb_SearchFilter.FlatStyle = FlatStyle.Flat;
             cb_SearchFilter.Font = new Font("Segoe UI", 10.25F, FontStyle.Regular, GraphicsUnit.Point);
             cb_SearchFilter.FormattingEnabled = true;
-            cb_SearchFilter.Items.AddRange(new object[] { "Nombre", "Apellido", "Cédula", "Departamento", "Correo", "Teléfono" });
+            cb_SearchFilter.Items.AddRange(new object[] { "Nombre", "Apellido", "Departamento" });
             cb_SearchFilter.Location = new Point(822, 101);
             cb_SearchFilter.Name = "cb_SearchFilter";
             cb_SearchFilter.Size = new Size(160, 27);
             cb_SearchFilter.TabIndex = 17;
+            cb_SearchFilter.SelectedIndexChanged += cb_SearchFilter_SelectedIndexChanged;
             // 
             // pb_FilterBg
             // 
@@ -193,6 +197,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PayrollView";
+            Load += PayrollView_Load;
             ((System.ComponentModel.ISupportInitialize)Pb_txtPayroll).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb_SearchBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb_Shape).EndInit();

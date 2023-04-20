@@ -95,6 +95,7 @@ namespace H_Resource.Presenters
                     view.CountryId = employeeToEdit.CountryId;
                     view.BirthDate = employeeToEdit.BirthDate != null ? (DateTime)employeeToEdit.BirthDate : DateTime.Today;
                     view.HireDate = employeeToEdit.HireDate != null ? (DateTime)employeeToEdit.HireDate : DateTime.Today;
+                    view.Salary = (int)employeeToEdit.Payrolls.First().BaseSalary;
                     if (employeeToEdit.Image != null)
                     {
                         byte[] imageBytes = employeeToEdit.Image;
@@ -132,6 +133,7 @@ namespace H_Resource.Presenters
                     {
                         // eliminar el empleado
                         await repository.DeleteAsync(employeeToDelete);
+                        MessageBox.Show("Empleado eliminado correctamente!");
                         employeeList = null;
                         // recargar la lista de empleados
                         LoadAllEmployeeList();

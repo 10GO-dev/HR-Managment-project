@@ -30,15 +30,47 @@ namespace H_Resource.Presenters
             this.vacationRepository = vacationRepository;
             this.employeeRepository = employeeRepository;
             this._vacationView.AddEvent += AddVacation;
-            this._vacationView.RemoveEvent += RemoveVacation;
             this._vacationView.EditEvent += EditVacation;
             this._vacationView.SearchEvent += SearchEvent;
             this._vacationView.ShowHomeView += ShowHomeView;
+            this._vacationView.SaveEvent += SaveChanges;
             this._vacationView.SetVacationListBindingSource(VacationBindingSource);
             this._vacationView.SetEmployeeDetailBindingSource(EmployeesBindingSource);
             this._vacationView.SelectEmployeeClick += SelectEmployeeToEdit;
             LoadAllVactions();
             _vacationView.Show();
+        }
+
+        private async void SaveChanges(object? sender, EventArgs e)
+        {
+            try
+            {
+
+                VacationModel vacation = new VacationModel();
+                vacation.VacationId = Convert.ToInt32(_vacationView.VacationID);
+                vacation.StartDate = _vacationView.StartDate;
+                vacation.EndDate = _vacationView.EndDate;
+                vacation.EmployeeId = _vacationView.EmployeeID;
+                vacation.TakenDays = Convert.ToInt32(_vacationView.TakenDays);
+                if (_vacationView.IsEdit) // Edit Vacation
+                {
+                    await vacationRepository.EditAsync(vacation);
+                    MessageBox.Show("Vacación actualizada correctamente");
+                }
+                else //Add new Vacation
+                {
+                    await vacationRepository.AddAsync(vacation);
+                    MessageBox.Show("Vacación añadida correctamente");
+                }
+                _vacationView.GoBack();
+                vacationList = null;
+                _vacationView.IsEdit = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                _vacationView.IsCached = false;
+            }
         }
 
         private async void SelectEmployeeToEdit(object? sender, EventArgs e)
@@ -92,13 +124,36 @@ namespace H_Resource.Presenters
 
         private void EditVacation(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var selectedVacation =(VacationEmployeeList?)VacationBindingSource.Current;
+            if (selectedVacation != null)
+            {
+                EmployeeModel vacationEmployee = employeeRepository.GetAsync(selectedVacation.EmployeeId);
+
+                if (vacationEmployee != null)
+                {
+                    _vacationView.IsEdit = true;
+                    _vacationView.VacationID = selectedVacation.VacationID;
+                    _vacationView.EmployeeID = selectedVacation.EmployeeId;
+                    _vacationView.FullName = vacationEmployee.FirstName + " " + vacationEmployee.LastName;
+                    _vacationView.Department = vacationEmployee.Department.DepartmentName;
+                    _vacationView.DocumentId = vacationEmployee.DocumentId;
+                    if (vacationEmployee.Image != null)
+                    {
+                        byte[] imageBytes = vacationEmployee.Image;
+                        using (MemoryStream ms = new(imageBytes))
+                        {
+                            _vacationView.Image = Image.FromStream(ms);
+                        };
+                    }
+                    else _vacationView.Image = Properties.Resources.Img_Avatar;
+                    _vacationView.HireDate = vacationEmployee.HireDate;
+                    _vacationView.AvailableDays = vacationEmployee.AvailableDays.ToString();
+                    _vacationView.StartDate = selectedVacation.StartDate;
+                    _vacationView.EndDate = selectedVacation.EndDate;
+                }
+            }
         }
 
-        private void RemoveVacation(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private async void AddVacation(object? sender, EventArgs e)
         {

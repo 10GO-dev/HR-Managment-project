@@ -28,8 +28,8 @@ namespace H_Resource.Views
         public DateTime? HireDate { get => dtp_eHireDate.Value; set => dtp_eHireDate.Value = (DateTime)value; }
         public string AvailableDays { get => eAvailableDays.Text; set => eAvailableDays.Text = value; }
         public string TakenDays { get => eTakenDays.Text; set => eTakenDays.Text = value; }
-        public DateTime StartDate { get => Dtp_Startdate.Value; set => Dtp_Enddate.Value = (DateTime)value; }
-        public DateTime EndDate { get => Dtp_Enddate.Value; set => Dtp_Enddate.Value = (DateTime)value; }
+        public DateTime? StartDate { get => Dtp_Startdate.Value; set => Dtp_Enddate.Value = (DateTime)value; }
+        public DateTime? EndDate { get => Dtp_Enddate.Value; set => Dtp_Enddate.Value = (DateTime)value; }
         public Image? Image
         {
             get => Tools.CompareImages((Bitmap)Pb_imgPerfil.Image, Properties.Resources.Img_Avatar) ? null : Pb_imgPerfil.Image;
@@ -37,9 +37,17 @@ namespace H_Resource.Views
         }
         public int SelectedEmployeeIndex { get => selectedEmployeeIndex; }
         public int EmployeeID { get => employeeId; set => employeeId = value; }
+        public bool IsEdit { get => isEdit; set => isEdit = value; }
+
+        public int SelectedVacationIndex => selectedVacationIndex;
+
+        public int? VacationID { get => vacationID; set => vacationID = value?? 0; }
 
         private static VacationView? instance;
         private int selectedEmployeeIndex;
+        private bool isEdit;
+        private int selectedVacationIndex;
+        private int vacationID;
 
         private VacationView()
         {
@@ -79,6 +87,8 @@ namespace H_Resource.Views
                 AddEvent?.Invoke(this, EventArgs.Empty);
                 tabControlVacationView.TabPages.Remove(tabPageVacationList);
                 tabControlVacationView.TabPages.Add(tabPageAddOrEdit);
+                pn_employeeSelect.Visible = true;
+                btnOpenEmployeeSelector.Visible = true;
                 tabPageAddOrEdit.Text = "Añadir Vacaciones";
             };
             //Edit Event
@@ -88,6 +98,8 @@ namespace H_Resource.Views
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tabControlVacationView.TabPages.Remove(tabPageVacationList);
                 tabControlVacationView.TabPages.Add(tabPageAddOrEdit);
+                pn_employeeSelect.Visible = false;
+                btnOpenEmployeeSelector.Visible = false;
                 tabPageAddOrEdit.Text = "Editar Vacaciones";
             };
             //selectEmploye Event
@@ -95,6 +107,11 @@ namespace H_Resource.Views
             {
                 selectedEmployeeIndex = e.RowIndex;
                 SelectEmployeeClick?.Invoke(this, EventArgs.Empty);
+            };
+            //Save Vacation Event
+            btnSave.Click += delegate { 
+                
+                SaveEvent?.Invoke(this, EventArgs.Empty);
             };
         }
 
@@ -114,6 +131,7 @@ namespace H_Resource.Views
         public event EventHandler? EditEvent;
         public event EventHandler<EventArgs>? ShowHomeView;
         public event EventHandler SelectEmployeeClick;
+        public event EventHandler SaveEvent;
 
         private void Txtbox_SearchBar_Enter(object sender, EventArgs e)
         {
@@ -238,11 +256,11 @@ namespace H_Resource.Views
             txtName.Text = "";
             txtDepartment.Text = "";
             eDocumentID.Text = "";
-            eAvailableDays.Text = "";
+            eAvailableDays.Text = "0";
             dtp_eHireDate.Value = DateTime.Today;
             Dtp_Startdate.Value = DateTime.Today;
             Dtp_Enddate.Value = DateTime.Today.AddDays(1);
-            eTakenDays.Text = "";
+            eTakenDays.Text = "0";
             Pb_imgPerfil.Image = Properties.Resources.Img_Avatar;
         }
 
@@ -258,13 +276,37 @@ namespace H_Resource.Views
             }
         }
 
-        private void Dtp_Enddate_ValueChanged(object sender, EventArgs e)
+        //private void Dtp_Enddate_ValueChanged(object sender, EventArgs e)
+        //{
+        //    int dias = (int)(Dtp_Enddate.Value - Dtp_Startdate.Value).TotalDays;
+        //    if (DateTime.Compare(Dtp_Enddate.Value, Dtp_Startdate.Value) < 0)
+        //    {
+        //        MessageBox.Show("La fecha fin debe ser mayor que la fecha de inicio");
+        //        Dtp_Enddate.Value = DateTime.Today.AddDays(1);
+        //    }
+        //    if (dias > Convert.ToInt16(AvailableDays))
+        //    {
+        //        MessageBox.Show("La cantidad de días no puede ser mayor a los días disponibles del empleado");
+        //        Dtp_Enddate.Value = DateTime.Today.AddDays(1);
+        //    }else
+        //    {
+        //        TakenDays = dias.ToString();
+        //    }
+        //}
+
+        private void Pb_imgPerfil_Paint(object sender, PaintEventArgs e)
         {
-            if (DateTime.Compare(Dtp_Startdate.Value, Dtp_Enddate.Value) < 1)
-            {
-                MessageBox.Show("La fecha fin debe ser mayor que la fecha de inicio");
-                Dtp_Enddate.Value = DateTime.Today.AddDays(1);
-            }
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddEllipse(0, 0, Pb_imgPerfil.Width - 1, Pb_imgPerfil.Height - 1);
+            Region rg = new Region(gp);
+            Pb_imgPerfil.Region = rg;
+        }
+
+        public void GoBack()
+        {
+            tabControlVacationView.TabPages.Remove(tabPageAddOrEdit);
+            tabControlVacationView.TabPages.Add(tabPageVacationList);
+            ResetTabVacationEdit();
         }
     }
 }

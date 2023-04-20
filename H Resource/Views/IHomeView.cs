@@ -10,6 +10,7 @@ namespace H_Resource.Views
     {
         event EventHandler<EventArgs> ShowEmployeesView;
         event EventHandler<EventArgs> ShowVacationView;
+        event EventHandler<EventArgs> ShowPayrollView;
 
         void Show();
         void Close();

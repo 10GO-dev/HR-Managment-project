@@ -78,6 +78,9 @@ namespace H_Resource.Presenters
             try
             {
                 var model = new EmployeeModel();
+                var payroll = new PayrollModel();
+                payroll.BaseSalary = view.Salary;
+                model.Payrolls.Add(payroll);
                 model.FirstName = view.FirstName;
                 model.LastName = view.LastName;
                 model.Email = view.Email;

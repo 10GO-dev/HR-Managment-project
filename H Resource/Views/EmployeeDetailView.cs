@@ -35,6 +35,7 @@ namespace H_Resource.Views
         public bool IsSuccessful { get => isSuccessful; set => isSuccessful = value; }
         public bool IsEdit { get => isEdit; set => isEdit = value; }
         public string DocuemntId { get => Txt_idcard.Text; set => Txt_idcard.Text = value; }
+        public int Salary { get => Convert.ToInt32(Txt_Salary.Text); set => Txt_Salary.Text = value.ToString(); }
 
         private static EmployeeDetailView? instance;
 
@@ -64,7 +65,7 @@ namespace H_Resource.Views
 
         private void Pb_imgPerfil_Paint(object sender, PaintEventArgs e)
         {
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            GraphicsPath gp = new GraphicsPath();
             gp.AddEllipse(0, 0, Pb_imgPerfil.Width - 1, Pb_imgPerfil.Height - 1);
             Region rg = new Region(gp);
             Pb_imgPerfil.Region = rg;
