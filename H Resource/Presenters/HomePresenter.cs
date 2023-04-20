@@ -33,6 +33,9 @@ namespace H_Resource.Presenters
             VacationRepository repository = new VacationRepository();
             container.AddView(view);
             new VacationPresenter(view, repository,EmployeeRepository);
+            this.homeView.ShowEmployeesView -= ShowEmployeeView;
+            this.homeView.ShowVacationView -= ShowVacationView;
+            this.homeView.ShowPayrollView -= ShowPayrollView;
             this.homeView.Close();
         }
 
@@ -44,6 +47,9 @@ namespace H_Resource.Presenters
             EmployeeRepository repository = new EmployeeRepository();
             container.AddView(view);
             new EmployeePresenter(view, repository);
+            this.homeView.ShowEmployeesView -= ShowEmployeeView;
+            this.homeView.ShowVacationView -= ShowVacationView;
+            this.homeView.ShowPayrollView -= ShowPayrollView;
             this.homeView.Close();
         }
         private void ShowPayrollView(object? sender, EventArgs e)
@@ -54,6 +60,9 @@ namespace H_Resource.Presenters
             PayrollRepository repository = new PayrollRepository();
             container.AddView(view);
             new PayrollPresenter(view, repository);
+            this.homeView.ShowEmployeesView -= ShowEmployeeView;
+            this.homeView.ShowVacationView -= ShowVacationView;
+            this.homeView.ShowPayrollView -= ShowPayrollView;
             this.homeView.Close();
         }
     }

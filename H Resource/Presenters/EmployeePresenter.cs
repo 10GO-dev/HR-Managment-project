@@ -38,6 +38,11 @@ namespace H_Resource.Presenters
             IHomeView view = HomeView.GetInstance(mainContainer);
             mainContainer.AddView((Form)view);
             new HomePresenter(view);
+            this.view.SearchEvent -= SearchEmployee;
+            this.view.AddNewEvent -= AddNewEmployee;
+            this.view.EditEvent -= LoadSelectedEmployeeToEdit;
+            this.view.DeleteEvent -= DeleteSelectedEmployee;
+            this.view.ShowHomeView -= ShowHomeView;
             this.view.Close();
         }
 
@@ -71,11 +76,12 @@ namespace H_Resource.Presenters
 
         private async void LoadSelectedEmployeeToEdit(object? sender, EventArgs e)
         {
-            var employee = (EmployeeViewModel)EmployeeBindingSource.Current;
-            if (employee != null)
+            var employeeListSc = EmployeeBindingSource.DataSource as List<EmployeeViewModel>;
+            EmployeeViewModel selectedEmployee = employeeListSc[this.view.SelectedEmployeeIndex];
+            if (selectedEmployee != null)
             {
                 MainContainer mainContainer = MainContainer.GetInstance();
-                EmployeeModel? employeeToEdit = employeeList.FirstOrDefault(e => e.EmployeeId == employee.EmployeeId) ?? repository.GetAsync(employee.EmployeeId);
+                EmployeeModel? employeeToEdit = employeeList.FirstOrDefault(e => e.EmployeeId == selectedEmployee.EmployeeId) ?? repository.GetAsync(selectedEmployee.EmployeeId);
                 if (employeeToEdit != null)
                 {
 
@@ -160,6 +166,11 @@ namespace H_Resource.Presenters
             view.IsEdit = false;
             view.setTitle("Añadir Empleado");
             _ = new EmployeeDetailPresenter(view, repository);
+            this.view.SearchEvent -= SearchEmployee;
+            this.view.AddNewEvent -= AddNewEmployee;
+            this.view.EditEvent -= LoadSelectedEmployeeToEdit;
+            this.view.DeleteEvent -= DeleteSelectedEmployee;
+            this.view.ShowHomeView -= ShowHomeView;
             this.view.Close();
         }
 

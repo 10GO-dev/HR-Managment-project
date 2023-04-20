@@ -118,18 +118,6 @@ namespace H_Resource.Views
             InputValidation.NumberOnly(e);
         }
 
-        private void Pb_btnConfirmar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SaveEvent?.Invoke(this, EventArgs.Empty);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
 
         private void AddOrEditEmployeeView_SizeChanged(object sender, EventArgs e)
         {
@@ -204,6 +192,17 @@ namespace H_Resource.Views
         public void setTitle(string title)
         {
             Lb_Title.Text = title;
+        }
+
+        public void enableButtons(bool value)
+        {
+            Pb_btnConfirmar.Enabled = value;
+        }
+
+        private void Pb_btnConfirmar_Click(object sender, EventArgs e)
+        {
+            enableButtons(false);
+            SaveEvent?.Invoke(this, EventArgs.Empty);
         }
     }
 }

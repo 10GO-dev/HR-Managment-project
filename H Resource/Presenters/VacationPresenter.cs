@@ -105,6 +105,11 @@ namespace H_Resource.Presenters
             IHomeView view = HomeView.GetInstance(mainContainer);
             mainContainer.AddView((Form)view);
             new HomePresenter(view);
+            this._vacationView.AddEvent -= AddVacation;
+            this._vacationView.EditEvent -= EditVacation;
+            this._vacationView.SearchEvent -= SearchEvent;
+            this._vacationView.ShowHomeView -= ShowHomeView;
+            this._vacationView.SaveEvent -= SaveChanges;
             this._vacationView.Close();
         }
 

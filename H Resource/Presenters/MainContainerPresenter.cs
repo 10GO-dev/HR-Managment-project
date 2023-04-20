@@ -22,12 +22,8 @@ namespace H_Resource.Presenters
         {
             IHomeView view = HomeView.GetInstance((MainContainer)mainContainer);
             mainContainer.AddView((Form)view);
+            this.mainContainer.ShowHomeView -= ShowHomeView;
             new HomePresenter(view);
-        }
-
-        private void ShowEmployeesView(object? sender, EventArgs e)
-        {
-
         }
     }
 }

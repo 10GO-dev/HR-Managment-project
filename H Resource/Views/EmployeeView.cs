@@ -26,7 +26,10 @@ namespace H_Resource.Views
         public string Message { get => message; set => message = value; }
         public bool IsCached { get => isCached; set => isCached = value; }
 
+        public int SelectedEmployeeIndex { get => selectedEmployeeIndex; }
+
         private static EmployeeView? instance;
+        private int selectedEmployeeIndex;
 
         //Constructor
         private EmployeeView()
@@ -74,6 +77,12 @@ namespace H_Resource.Views
             Pb_btn_Delete.Click += delegate
             {
                 DeleteEvent?.Invoke(this, EventArgs.Empty);
+            };
+
+            //SelectEmployee Event
+            Dgv_EmployeeList.CellClick += (s, e) =>
+            {
+                selectedEmployeeIndex = e.RowIndex;
             };
         }
 

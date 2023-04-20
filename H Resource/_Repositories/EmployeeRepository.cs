@@ -41,71 +41,89 @@ namespace H_Resource._Repositories
 
         public async Task<IEnumerable<EmployeeModel>> FindByValueAsync(string criteria, string value)
         {
-            var employeeList = new List<EmployeeModel>();
-            using (HrmsDbContext dbContext = new HrmsDbContext())
+            try
             {
-                switch (criteria)
+                var employeeList = new List<EmployeeModel>();
+                using (HrmsDbContext dbContext = new HrmsDbContext())
                 {
-                    case "Nombre":
-                        employeeList = await DbContext.Employees.Where(e => e.FirstName.Contains(value))
-                                                        .Include(e => e.Gender)
-                                                        .Include(e => e.Department)
-                                                        .Include(e => e.Country)
-                                                        .Include(e => e.Payrolls)
-                                                        .ToListAsync();
-                        break;
-                    case "Apellido":
-                        employeeList = await DbContext.Employees.Where(e => e.LastName.Contains(value))
-                                                        .Include(e => e.Gender)
-                                                        .Include(e => e.Department)
-                                                        .Include(e => e.Country)
-                                                        .Include(e => e.Payrolls)
-                                                        .ToListAsync();
-                        break;
-                    case "Cédula":
-                        employeeList = await DbContext.Employees.Where(e => e.DocumentId.Contains(value))
-                                                        .Include(e => e.Gender)
-                                                        .Include(e => e.Department)
-                                                        .Include(e => e.Country)
-                                                        .Include(e => e.Payrolls)
-                                                        .ToListAsync();
-                        break;
-                    case "Correo":
-                        employeeList = await DbContext.Employees.Where(e => e.Email.Contains(value))
-                                                        .Include(e => e.Gender)
-                                                        .Include(e => e.Department)
-                                                        .Include(e => e.Country)
-                                                        .Include(e => e.Payrolls)
-                                                        .ToListAsync();
-                        break;
-                    case "Teléfono":
-                        employeeList = await DbContext.Employees.Where(e => e.Phone.Contains(value))
-                                                        .Include(e => e.Gender)
-                                                        .Include(e => e.Department)
-                                                        .Include(e => e.Country)
-                                                        .Include(e => e.Payrolls)
-                                                        .ToListAsync();
-                        break;
-                    case "Departamento":
-                        employeeList = await DbContext.Employees.Where(e => e.Department.DepartmentName.Contains(value))
-                                                        .Include(e => e.Gender)
-                                                        .Include(e => e.Department)
-                                                        .Include(e => e.Country)
-                                                        .Include(e => e.Payrolls)
-                                                        .ToListAsync();
-                        break;
+
+
+
+                    switch (criteria)
+                    {
+                        case "Nombre":
+                            employeeList = await DbContext.Employees.Where(e => e.FirstName.Contains(value))
+                                                            .Include(e => e.Gender)
+                                                            .Include(e => e.Department)
+                                                            .Include(e => e.Country)
+                                                            .Include(e => e.Payrolls)
+                                                            .ToListAsync();
+                            break;
+                        case "Apellido":
+                            employeeList = await DbContext.Employees.Where(e => e.LastName.Contains(value))
+                                                            .Include(e => e.Gender)
+                                                            .Include(e => e.Department)
+                                                            .Include(e => e.Country)
+                                                            .Include(e => e.Payrolls)
+                                                            .ToListAsync();
+                            break;
+                        case "Cédula":
+                            employeeList = await DbContext.Employees.Where(e => e.DocumentId.Contains(value))
+                                                            .Include(e => e.Gender)
+                                                            .Include(e => e.Department)
+                                                            .Include(e => e.Country)
+                                                            .Include(e => e.Payrolls)
+                                                            .ToListAsync();
+                            break;
+                        case "Correo":
+                            employeeList = await DbContext.Employees.Where(e => e.Email.Contains(value))
+                                                            .Include(e => e.Gender)
+                                                            .Include(e => e.Department)
+                                                            .Include(e => e.Country)
+                                                            .Include(e => e.Payrolls)
+                                                            .ToListAsync();
+                            break;
+                        case "Teléfono":
+                            employeeList = await DbContext.Employees.Where(e => e.Phone.Contains(value))
+                                                            .Include(e => e.Gender)
+                                                            .Include(e => e.Department)
+                                                            .Include(e => e.Country)
+                                                            .Include(e => e.Payrolls)
+                                                            .ToListAsync();
+                            break;
+                        case "Departamento":
+                            employeeList = await DbContext.Employees.Where(e => e.Department.DepartmentName.Contains(value))
+                                                            .Include(e => e.Gender)
+                                                            .Include(e => e.Department)
+                                                            .Include(e => e.Country)
+                                                            .Include(e => e.Payrolls)
+                                                            .ToListAsync();
+                            break;
+                    }
+
+                    dbContext.ChangeTracker.Clear();
                 }
-                dbContext.ChangeTracker.Clear();
+
+                return employeeList;
             }
-            DbContext.ChangeTracker.Clear();
-            return employeeList;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public EmployeeModel? GetAsync(int id)
         {
-            EmployeeModel? employee = DbContext.Employees.AsNoTracking().Include(e => e.Department).Include(e => e.Gender).Include(e => e.Country).Include(e => e.Payrolls).FirstOrDefault(e => e.EmployeeId == id);
+            try
+            {
 
+            EmployeeModel? employee = DbContext.Employees.AsNoTracking().Include(e => e.Department).Include(e => e.Gender).Include(e => e.Country).Include(e => e.Payrolls).FirstOrDefault(e => e.EmployeeId == id);
             return employee;
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         public async Task AddAsync(EmployeeModel employee)

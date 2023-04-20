@@ -46,5 +46,6 @@ namespace H_Resource.Views
         void SetCountryComboBoxBindingSource(BindingSource contryList);
         void SetGenderComboBoxBindingSource(BindingSource genderList);
         void SetDepartmentComboBoxBindingSource(BindingSource departmentList);
+        void enableButtons(bool value);
     }
 }

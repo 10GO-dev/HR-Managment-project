@@ -17,7 +17,9 @@ namespace H_Resource.Views
         public string SearchValue { get; set; }
         public string? SearchCriteria { get; }
         public bool IsCached { get; set; }
-       
+
+        public int SelectedEmployeeIndex { get; }
+
 
         //Events
         event EventHandler SearchEvent;

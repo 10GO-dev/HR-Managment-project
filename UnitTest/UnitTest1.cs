@@ -132,6 +132,7 @@ namespace UnitTest
         [Test]
         public async Task t91DeberiaAgregarEmpleado()
         {//Tiene 
+            var payroll = new PayrollModel();
             var employee = new EmployeeModel();
             employee.FirstName = "Raul";
             employee.LastName = "Cristobal";
@@ -141,7 +142,8 @@ namespace UnitTest
             employee.CountryId = 1;
             employee.Phone = "8494773124";
             employee.GenderId = 1;
-
+            payroll.BaseSalary = 25000;
+            employee.Payrolls.Add(payroll);
             await employeeRepository.AddAsync(employee);
             EmployeeModel? AddedEmploye = new EmployeeModel();
             using (HrmsDbContext db = new HrmsDbContext())
@@ -156,11 +158,13 @@ namespace UnitTest
         public async Task t92DeberiaEditarEmpleado()
         {//Tiene 
             var employee = new EmployeeModel();
+            var payroll = new PayrollModel();
             EmployeeModel? EditedEmployee = new EmployeeModel();
             using (HrmsDbContext db = new HrmsDbContext())
             {
                 employee = db.Employees.AsNoTracking().SingleOrDefault(e => e.DocumentId == "00198754861");
                 employee.FirstName = "Ramon";
+                employee.Payrolls.Add(payroll);
                 await employeeRepository.EditAsync(employee);
                 EditedEmployee = db.Employees.AsNoTracking().SingleOrDefault(e => e.FirstName == employee.FirstName);
 

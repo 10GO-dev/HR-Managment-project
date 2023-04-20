@@ -58,6 +58,8 @@ namespace H_Resource.Presenters
             IHomeView view = HomeView.GetInstance(mainContainer);
             mainContainer.AddView((Form)view);
             new HomePresenter(view);
+            _view.ShowHomeView -= ShowHomeView;
+            _view.SearchEvent -= SearchEvent;
             this._view.Close();
         }
 

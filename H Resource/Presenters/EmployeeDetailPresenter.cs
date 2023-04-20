@@ -53,7 +53,10 @@ namespace H_Resource.Presenters
             view.IsCached = this.isCached;
             container.AddView(view);
             _ = new EmployeePresenter(view, new EmployeeRepository());
-            this.view.Hide();
+            //this.view.Hide();
+            this.view.ShowEmployeesView -= ShowEmployeesView;
+            this.view.CancelEvent -= ShowEmployeesView;
+            this.view.SaveEvent -= SaveEvent;
         }
 
         private void PreloadBindingData()
@@ -118,7 +121,9 @@ namespace H_Resource.Presenters
                     await repository.AddAsync(model);
                     MessageBox.Show("El empleado fue añadido exitosamente!");
                 }
+                this.view.enableButtons(true);
                 this.isCached = false;
+                ShowEmployeesView(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {
